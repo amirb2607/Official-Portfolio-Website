@@ -1,13 +1,9 @@
-# My Personal Portfolio Website
-
-Using Once UI for Next.js!
-
 # Once UI for Next.js
 
 A design system for indie builders who move fast and break limits without neglecting quality.
 
 
-![Once UI](/app/public/images/og/home.jpg)
+![Once UI](public/images/og/home.jpg)
 
 # Features
 
@@ -19,7 +15,7 @@ Start building your Next.js app in minutes with:
 # Demo
 [demo.once-ui.com](https://demo.once-ui.com)
 
-![Once UI](/app/public/images/demo.png)
+![Once UI](public/images/demo.png)
 
 # Getting started
 Clone the starter template from GitHub.
