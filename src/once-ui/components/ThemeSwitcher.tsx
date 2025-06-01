@@ -1,36 +1,24 @@
 "use client";
 
 import React, { forwardRef } from "react";
-import { Row, useTheme, IconButton } from ".";
+import { IconButton, useTheme } from "@/once-ui/components";
 
-const ThemeSwitcher = forwardRef<HTMLDivElement, React.ComponentProps<typeof Row>>((flex, ref) => {
+const ThemeSwitcher = forwardRef<HTMLDivElement, {}>((_, ref) => {
   const { theme, setTheme } = useTheme();
+  const isDark = theme === "dark";
+
+  const toggleTheme = () => {
+    setTheme(isDark ? "light" : "dark");
+  };
 
   return (
-    <Row
-      data-border="rounded"
-      ref={ref}
-      gap="2"
-      border="neutral-alpha-weak"
-      radius="full"
-      {...flex}
-    >
-      <IconButton
-        icon="computer"
-        variant={theme === "system" ? "primary" : "tertiary"}
-        onClick={() => setTheme("system")}
-      />
-      <IconButton
-        icon="dark"
-        variant={theme === "dark" ? "primary" : "tertiary"}
-        onClick={() => setTheme("dark")}
-      />
-      <IconButton
-        icon="light"
-        variant={theme === "light" ? "primary" : "tertiary"}
-        onClick={() => setTheme("light")}
-      />
-    </Row>
+    <IconButton
+      size="l"
+      icon={isDark ? "light" : "dark"}
+      variant="tertiary"
+      onClick={toggleTheme}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+    />
   );
 });
 
