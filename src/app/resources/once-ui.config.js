@@ -27,52 +27,52 @@ const font = {
 // default customization applied to the HTML in the main layout.tsx
 const style = {
   theme: "dark", // dark | light - not needed when using ThemeProvider
-  neutral: "gray", // sand | gray | slate
-  brand: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  neutral: "slate", // sand | gray | slate
+  brand: "violet", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   accent: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast | inverse
-  solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
-  surface: "filled", // filled | translucent
+  solidStyle: "plastic", // flat | plastic
+  border: "rounded", // rounded | playful | conservative
+  surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
-  scaling: "100", // 90 | 95 | 100 | 105 | 110
+  scaling: "90", // 90 | 95 | 100 | 105 | 110
 };
 
 const effects = {
   mask: {
-    cursor: false,
+    cursor: true,
     x: 50,
     y: 0,
     radius: 100,
   },
   gradient: {
-    display: false,
+    display: true,
     x: 50,
     y: 0,
-    width: 100,
-    height: 100,
-    tilt: 0,
+    width: 150,
+    height: 150,
+    tilt: 25,
     colorStart: "brand-background-strong",
     colorEnd: "static-transparent",
     opacity: 50,
   },
   dots: {
     display: true,
-    size: "2",
+    size: "8",
     color: "brand-on-background-weak",
-    opacity: 40,
+    opacity: 20,
   },
   lines: {
     display: false,
-    color: "neutral-alpha-weak",
+    color: "brand-alpha-weak",
     opacity: 100,
-    thickness: 1,
-    angle: 45,
+    thickness: 4,
+    angle: 0,
     size: "8",
   },
   grid: {
     display: false,
-    color: "neutral-alpha-weak",
+    color: "brand-alpha-weak",
     opacity: 100,
     width: "2",
     height: "2",
@@ -83,13 +83,14 @@ const effects = {
 const meta = {
   home: {
     path: "/",
-    title: "Once UI for Next.js",
+    title: "Amir B. - Portfolio",
+    keywords: "Amir B., portfolio, web developer, software engineer, projects, skills, contact",
     description: "An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.",
     image: "/og/home.jpg",
-    canonical: "https://once-ui.com",
+    canonical: "https://temp.temp",
     robots: "index,follow",
     alternates: [
-      { href: "https://once-ui.com", hrefLang: "en" },
+      { href: "https://temp.temp", hrefLang: "en" },
     ],
   },
   // add more routes and reference them in page.tsx
