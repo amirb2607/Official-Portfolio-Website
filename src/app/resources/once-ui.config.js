@@ -1,5 +1,5 @@
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.once-ui.com";
+const baseURL = "https://amirb.dev";
 
 // Import and set font for each variant
 import { Geist } from "next/font/google";
@@ -85,12 +85,12 @@ const meta = {
     path: "/",
     title: "Amir B. - Portfolio",
     keywords: "Amir B., portfolio, web developer, software engineer, projects, skills, contact",
-    description: "An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.",
+    description: "Welcome to my portfolio! I am Amir B., a web developer and software engineer. Explore my projects, skills, and get in touch.",
     image: "/og/home.jpg",
-    canonical: "https://temp.temp",
+    canonical: "https://amirb.dev",
     robots: "index,follow",
     alternates: [
-      { href: "https://temp.temp", hrefLang: "en" },
+      { href: "https://amirb.dev", hrefLang: "en" },
     ],
   },
   // add more routes and reference them in page.tsx
@@ -100,16 +100,16 @@ const meta = {
 const schema = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
+  name: "Amir B.",
   description: meta.home.description,
-  email: "lorant@once-ui.com",
+  email: "amir@amirb.dev",
 };
 
 // social links
 const social = {
-  twitter: "https://www.twitter.com/_onceui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  twitter: "https://www.twitter.com/xD",
+  linkedin: "https://www.linkedin.com/in/amir-bad/",
+  discord: "https://discord.com/users/216198697178890240",
 };
 
 export { baseURL, font, style, meta, schema, social, effects };

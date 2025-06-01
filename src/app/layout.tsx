@@ -9,6 +9,9 @@ import { Background, Column, Flex, ToastProvider, ThemeProvider } from "@/once-u
 import { opacity, SpacingToken } from "@/once-ui/types";
 import { Meta, Schema } from "@/once-ui/modules";
 
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 export async function generateMetadata() {
   return Meta.generate({
     title: meta.home.title,
@@ -80,6 +83,8 @@ export default function RootLayout({
           }}
         />
       </head>
+      <Analytics/>
+      <SpeedInsights/>
       <ThemeProvider>
         <ToastProvider>
           <Column as="body" fillWidth margin="0" padding="0">
