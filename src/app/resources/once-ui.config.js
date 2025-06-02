@@ -85,7 +85,7 @@ const meta = {
     path: "/",
     title: "Amir B. - Portfolio",
     keywords: "Amir B., portfolio, web developer, software engineer, projects, skills, contact",
-    description: "Welcome to my portfolio! I am Amir B., a web developer and software engineer. Explore my projects, skills, and get in touch.",
+    description: "Amir B.'s portfolio showcasing development projects, skills, and contact information.",
     image: "/og/home.jpg",
     canonical: "https://amirb.dev",
     robots: "index,follow",

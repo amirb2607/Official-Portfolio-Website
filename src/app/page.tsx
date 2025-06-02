@@ -2,7 +2,7 @@ import { Column, Heading, Text, Button, Logo, Badge, Line, LetterFx, Row, ThemeS
 
 export default function Home() {
   return (
-    <Column fill center padding="s">
+    <Column fillWidth center padding="xs">
       {/* Blurred pill-shaped Navbar using Once UI props */}
       <Row
         horizontal="space-between"
@@ -17,14 +17,15 @@ export default function Home() {
           border="neutral-alpha-medium"
           background="overlay"
           vertical="center"
-          gap="16"
-        >
-          <Logo icon={true} href="/" size="xs" />
+          gap="2">
+          <Logo size="xs" wordmark={false}/>
+          <Line vert height="16" />
+          <Logo size="xs" icon={false}/>
         </Badge>
         <Row gap="m" vertical="center">
-          <Button href="#about" variant="tertiary">About</Button>
-          <Button href="#projects" variant="tertiary">Projects</Button>
-          <Button href="#contact" variant="tertiary">Contact</Button>
+          <Button id="About" variant="tertiary" arrowIcon href="#about">About</Button>
+          <Button id="Projects" variant="tertiary" arrowIcon href="#projects">Projects</Button>
+          <Button id="Contact"variant="tertiary" arrowIcon  href="#contact">Contact</Button>
         </Row>
         {/* ThemeSwitcher aligned to center */}
         <Row vertical="center" paddingRight="m">
@@ -39,17 +40,7 @@ export default function Home() {
         <Text variant="heading-default-xl" onBackground="neutral-weak" wrap="balance" marginBottom="16">
           My name is Amir and I am a software engineer.
         </Text>
-        <Button
-          id="docs"
-          variant="secondary"
-          href="/temp"
-          data-border="rounded"
-          weight="default"
-          prefixIcon="copy"
-          arrowIcon
-        >
-          Explore more!
-        </Button>
+        <Badge id="badge-3" title="Learn more" href="/temp"/>
       </Column>
     </Column>
   );
