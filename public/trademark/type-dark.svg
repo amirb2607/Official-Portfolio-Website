@@ -1,4 +1,28 @@
-<svg width="1830" height="589" viewBox="0 0 1830 589" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Amir B. text replacing "once UI" with similar style -->
-  <text x="282" y="468" fill="white" font-family="Inter, sans-serif" font-size="450" font-weight="bold">Amir B.</text>
+<svg
+  width="1830"
+  height="589"
+  viewBox="0 0 1830 589"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <style type="text/css"><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap');
+
+      text {
+        font-family: 'Red Hat Display', sans-serif;
+        font-weight: 'bold';
+      }
+    ]]></style>
+  </defs>
+
+  <text
+    x="282"
+    y="468"
+    fill="white"
+    font-size="450"
+    font-weight="700"
+  >
+    Amir B.
+  </text>
 </svg>

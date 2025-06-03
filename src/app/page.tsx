@@ -1,47 +1,27 @@
-import { Column, Heading, Text, Button, Logo, Badge, Line, LetterFx, Row, ThemeSwitcher } from "@/once-ui/components";
+import { Column, Heading, Text, Badge, RevealFx} from "@/once-ui/components";
+import NavBar from "@/app/components/NavBar";
+import UnderDevFX from "./components/UnderDevFX";
 
 export default function Home() {
   return (
-    <Column fillWidth center padding="xs">
-      {/* Blurred pill-shaped Navbar using Once UI props */}
-      <Row
-        horizontal="space-between"
-        vertical="center"
-        padding="xs"
-        background="overlay"
-        radius="full"
-        gap="xl"
-      >
-        <Badge
-          textVariant="code-default-s"
-          border="neutral-alpha-medium"
-          background="overlay"
-          vertical="center"
-          gap="2">
-          <Logo size="xs" wordmark={false}/>
-          <Line vert height="16" />
-          <Logo size="xs" icon={false}/>
-        </Badge>
-        <Row gap="m" vertical="center">
-          <Button id="About" variant="tertiary" arrowIcon href="#about">About</Button>
-          <Button id="Projects" variant="tertiary" arrowIcon href="#projects">Projects</Button>
-          <Button id="Contact"variant="tertiary" arrowIcon  href="#contact">Contact</Button>
-        </Row>
-        {/* ThemeSwitcher aligned to center */}
-        <Row vertical="center" paddingRight="m">
-          <ThemeSwitcher />
-        </Row>
-      </Row>
-
-      <Column maxWidth="s" horizontal="center" gap="l" align="center" marginTop="xl">
-        <Heading variant="display-strong-xl" marginTop="24">
-          Hello World!
-        </Heading>
-        <Text variant="heading-default-xl" onBackground="neutral-weak" wrap="balance" marginBottom="16">
-          My name is Amir and I am a software engineer.
-        </Text>
-        <Badge id="badge-3" title="Learn more" href="/temp"/>
+    <RevealFx speed="fast" delay={0.1} translateY={10}>
+      <Column fillWidth center padding="xs">
+        <NavBar />
+          <Column maxWidth="s" horizontal="center" gap="l" align="center" marginTop="xl">
+              <Heading variant="display-strong-xl" marginTop="24">
+                Hello World!
+              </Heading>
+              <RevealFx speed="fast" delay={0.2} translateY={3}>
+                <Text variant="body-strong-xl" onBackground="neutral-weak" wrap="balance" marginBottom="16">
+                  My name is Amir and I am a Junior Software Developer | B.S. in Computer Science @ Brooklyn College
+                </Text>
+              </RevealFx>
+              <RevealFx speed="fast" delay={0.2} translateY={4} center>
+                <UnderDevFX /> {/* TODO: Modify this component to make it modular (take in input: text, repeat time) */}
+              </RevealFx>
+              <Badge id="badge-3" title="Learn more" href="/temp"/>
+          </Column>
       </Column>
-    </Column>
+    </RevealFx>
   );
 }

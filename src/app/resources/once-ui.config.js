@@ -1,11 +1,11 @@
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://amirb.dev";
+const baseURL = "https://www.amirb.dev";
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
+import { Red_Hat_Display } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 
-const primaryFont = Geist({
+const primaryFont = Red_Hat_Display ({
   variable: "--font-primary",
   subsets: ["latin"],
   display: "swap",
@@ -83,9 +83,9 @@ const effects = {
 const meta = {
   home: {
     path: "/",
-    title: "Amir B. - Portfolio",
-    keywords: "Amir B., portfolio, web developer, software engineer, projects, skills, contact",
-    description: "Amir B.'s portfolio showcasing development projects, skills, and contact information.",
+    title: "Amir B. | Portfolio",
+    keywords: "Amir, Amir B., amirb.dev, amirb, amirdev, amirbdev, portfolio, web developer, software engineer, projects, skills, contact",
+    description: "Amir B.'s Personal Website! Showcasing development projects, skills, and contact information.",
     image: "/og/home.jpg",
     canonical: "https://amirb.dev",
     robots: "index,follow",
@@ -99,10 +99,10 @@ const meta = {
 // default schema data
 const schema = {
   logo: "",
-  type: "Organization",
+  type: "Personal",
   name: "Amir B.",
   description: meta.home.description,
-  email: "amir@amirb.dev",
+  email: "me@amirb.dev",
 };
 
 // social links
