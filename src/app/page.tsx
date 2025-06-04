@@ -1,6 +1,6 @@
 import { Column, Heading, Text, Badge, RevealFx} from "@/once-ui/components";
 import NavBar from "@/app/components/NavBar";
-import UnderDevFX from "./components/UnderDevFX";
+import DelayRepeatLetterFX from "./components/DelayRepeatLetterFX";
 
 export default function Home() {
   return (
@@ -17,9 +17,9 @@ export default function Home() {
                 </Text>
               </RevealFx>
               <RevealFx speed="fast" delay={0.2} translateY={4} center>
-                <UnderDevFX /> {/* TODO: Modify this component to make it modular (take in input: text, repeat time) */}
+                <DelayRepeatLetterFX text="Currently Under Development" delay={7_000} speed="slow" />
               </RevealFx>
-              <Badge id="badge-3" title="Learn more" href="/temp"/>
+              <Badge id="badge-3" title="Temp❗" href="/temp"/>
           </Column>
       </Column>
     </RevealFx>

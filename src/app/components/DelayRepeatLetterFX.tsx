@@ -1,21 +1,24 @@
-// app/components/UnderDevFX.tsx
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import { LetterFx } from "@/once-ui/components";
 
-export default function UnderDevFX() {
+interface Props {
+  text: string // Text to display 
+  delay?: number // Delay in milliseconds, defaults to 10000 (10 seconds)
+  speed?: "fast" | "medium" | "slow"; //LetterFX speed props
+}
+
+export default function DelayRepeatLetterFX(props: Props) {
   // 1) Use a ref to hold LetterFx’s internal eventHandler. Start as `null`.
   const handlerRef = useRef<(() => void) | null>(null);
-
-  // 2) A boolean that flips every 10 seconds
   const [toggle, setToggle] = useState(false);
 
-  // 3) Flip `toggle` every 10s
+  // 3) Flip `toggle` every {delay} or 10s
   useEffect(() => {
     const id = setInterval(() => {
       setToggle((prev) => !prev);
-    }, 10_000);
+    }, props.delay || 10_000); // Defaults to 10 seconds if no delay is provided
 
     return () => clearInterval(id);
   }, []);
@@ -34,10 +37,9 @@ export default function UnderDevFX() {
       onTrigger={(eventHandler) => {
         handlerRef.current = eventHandler;
       }}
-      speed="slow"
-      className="body-strong-xl"
+      speed={ props.speed || "medium"} //Defaults to medium if no speed is provided
     >
-      Currently Under Development!
+      { props.text } {/* Text to display, passed as children */} 
     </LetterFx>
   );
 }
