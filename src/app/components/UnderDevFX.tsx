@@ -4,21 +4,27 @@
 import { useEffect, useRef, useState } from "react";
 import { LetterFx } from "@/once-ui/components";
 
-export default function UnderDevFX() {
+type UnderDevFxProps = {
+  text: string;
+  /** Delay in milliseconds between effect triggers */
+  delay?: number;
+};
+
+export default function UnderDevFX({ text, delay = 10_000 }: UnderDevFxProps) {
   // 1) Use a ref to hold LetterFx’s internal eventHandler. Start as `null`.
   const handlerRef = useRef<(() => void) | null>(null);
 
-  // 2) A boolean that flips every 10 seconds
+  // 2) A boolean that flips according to the provided delay
   const [toggle, setToggle] = useState(false);
 
-  // 3) Flip `toggle` every 10s
+  // 3) Flip `toggle` based on `delay`
   useEffect(() => {
     const id = setInterval(() => {
       setToggle((prev) => !prev);
-    }, 10_000);
+    }, delay);
 
     return () => clearInterval(id);
-  }, []);
+  }, [delay]);
 
   // 4) Whenever `toggle` changes, call handlerRef.current (if non-null)
   useEffect(() => {
@@ -37,7 +43,7 @@ export default function UnderDevFX() {
       speed="slow"
       className="body-strong-xl"
     >
-      Currently Under Development!
+      {text}
     </LetterFx>
   );
 }

@@ -17,7 +17,7 @@ export default function Home() {
                 </Text>
               </RevealFx>
               <RevealFx speed="fast" delay={0.2} translateY={4} center>
-                <UnderDevFX /> {/* TODO: Modify this component to make it modular (take in input: text, repeat time) */}
+                <UnderDevFX text="Currently Under Development!" delay={10_000} />
               </RevealFx>
               <Badge id="badge-3" title="Learn more" href="/temp"/>
           </Column>
