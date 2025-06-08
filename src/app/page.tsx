@@ -28,7 +28,7 @@ export default function Home() {
               </Text>
             </Column>
           </RevealFx>
-          <Badge id="temp" title="Temp❗" href="/temp"/>
+          <Badge id="temp" title="Temp❗" href="/temp1"/>
         </Column>
       </Column>
     </RevealFx>
