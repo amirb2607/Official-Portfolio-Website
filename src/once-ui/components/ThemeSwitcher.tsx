@@ -15,7 +15,7 @@ const ThemeSwitcher = forwardRef<HTMLDivElement, {}>((_, ref) => {
     <IconButton
       size="l"
       icon={isDark ? "light" : "dark"}
-      variant="tertiary"
+      variant="ghost"
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     />

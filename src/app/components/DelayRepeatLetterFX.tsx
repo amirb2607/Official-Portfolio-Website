@@ -7,39 +7,45 @@ interface Props {
   text: string // Text to display 
   delay?: number // Delay in milliseconds, defaults to 10000 (10 seconds)
   speed?: "fast" | "medium" | "slow"; //LetterFX speed props
+  className?: string;
 }
 
 export default function DelayRepeatLetterFX(props: Props) {
-  // 1) Use a ref to hold LetterFx’s internal eventHandler. Start as `null`.
   const handlerRef = useRef<(() => void) | null>(null);
-  const [toggle, setToggle] = useState(false);
+  const [active, setActive] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // 3) Flip `toggle` every {delay} or 10s
   useEffect(() => {
-    const id = setInterval(() => {
-      setToggle((prev) => !prev);
-    }, props.delay || 10_000); // Defaults to 10 seconds if no delay is provided
+    if (!active || !handlerRef.current) return;
 
-    return () => clearInterval(id);
-  }, []);
+    const delay = props.delay ?? 10_000;
 
-  // 4) Whenever `toggle` changes, call handlerRef.current (if non-null)
-  useEffect(() => {
-    if (handlerRef.current) {
-      handlerRef.current();
-    }
-  }, [toggle]);
+    timeoutRef.current = setTimeout(() => {
+      handlerRef.current?.();
+
+      intervalRef.current = setInterval(() => {
+        handlerRef.current?.();
+      }, delay);
+    }, delay);
+
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [active, props.delay]);
 
   return (
     <LetterFx
       trigger="custom"
-      // LetterFx will invoke onTrigger with its internal eventHandler
       onTrigger={(eventHandler) => {
         handlerRef.current = eventHandler;
+        setActive(true);
       }}
-      speed={ props.speed || "medium"} //Defaults to medium if no speed is provided
+      speed={props.speed || "medium"}
+      className={props.className || undefined}
     >
-      { props.text } {/* Text to display, passed as children */} 
+      {props.text}
     </LetterFx>
   );
 }

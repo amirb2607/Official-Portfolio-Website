@@ -15,7 +15,6 @@ export default function NavBar() {
       mobileDirection="column"
     >
       <Badge
-        textVariant="code-default-s"
         border="neutral-alpha-medium"
         background="overlay"
         vertical="center"

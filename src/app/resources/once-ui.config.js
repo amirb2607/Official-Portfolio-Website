@@ -99,7 +99,7 @@ const meta = {
 // default schema data
 const schema = {
   logo: "",
-  type: "Personal",
+  type: "website",
   name: "Amir B.",
   description: meta.home.description,
   email: "me@amirb.dev",
@@ -107,7 +107,6 @@ const schema = {
 
 // social links
 const social = {
-  twitter: "https://www.twitter.com/xD",
   linkedin: "https://www.linkedin.com/in/amir-bad/",
   discord: "https://discord.com/users/216198697178890240",
 };
