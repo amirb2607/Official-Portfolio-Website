@@ -38,7 +38,7 @@ export default function DelayRepeatLetterFX(props: Props) {
   return (
     <LetterFx
       trigger="custom"
-      onTrigger={(eventHandler) => {
+      onTrigger={(eventHandler: (() => void) | null) => {
         handlerRef.current = eventHandler;
         setActive(true);
       }}
