@@ -29,7 +29,7 @@ This repository contains the source code for my personal portfolio site. It will
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/Official-Portfolio-Website.git
+   git clone https://github.com/amirb2607/Official-Portfolio-Website.git
 
    cd Official-Portfolio-Website
 2. **Install Dependencies**
