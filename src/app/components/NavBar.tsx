@@ -1,4 +1,4 @@
-import { Badge, Banner, Button, Icon, Line, Logo, Row, ThemeSwitcher } from "@/once-ui/components";
+import { Badge, Button, Icon, Line, Logo, Row, ThemeSwitcher } from "@/once-ui/components";
 
 export default function NavBar() {
   return (

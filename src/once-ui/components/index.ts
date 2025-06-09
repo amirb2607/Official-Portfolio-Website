@@ -45,6 +45,7 @@ export * from "./NumberInput";
 export * from "./OgCard";
 export * from "./Option";
 export * from "./OTPInput";
+export * from "./Particle";
 export * from "./PasswordInput";
 export * from "./RadioButton";
 export * from "./RevealFx";
