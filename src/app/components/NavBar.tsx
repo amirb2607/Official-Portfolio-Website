@@ -1,8 +1,10 @@
-import { Badge, Banner, Button, Icon, Line, Logo, Row, ThemeSwitcher } from "@/once-ui/components";
+"use client";
+import { Badge, Button, Icon, Line, Logo, Row, ThemeSwitcher } from "@/once-ui/components";
 
 export default function NavBar() {
   return (
     // Blurred pill-shaped Navbar using Once UI props
+    // TODO: Make NavBar Sticky!
     <Row 
       horizontal="center"
       vertical="center"
@@ -10,8 +12,8 @@ export default function NavBar() {
       background="overlay"
       radius="full"
       gap="xl"
-      //hide='s' 
-      // (Will use to create two seperate navbars for desktop and mobile) For now making the mobile direction column
+      hide='s' 
+      // TODO: Create Smaller Mobile NavBar that will be at the bottom of the screen
       mobileDirection="column"
     >
       <Badge

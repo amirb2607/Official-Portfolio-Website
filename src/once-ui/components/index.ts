@@ -1,6 +1,7 @@
 export * from "./Accordion";
 export * from "./AccordionGroup";
 export * from "./Arrow";
+export * from "./AutoScroll";
 export * from "./Avatar";
 export * from "./AvatarGroup";
 export * from "./Badge";
@@ -45,6 +46,7 @@ export * from "./NumberInput";
 export * from "./OgCard";
 export * from "./Option";
 export * from "./OTPInput";
+export * from "./Particle";
 export * from "./PasswordInput";
 export * from "./RadioButton";
 export * from "./RevealFx";

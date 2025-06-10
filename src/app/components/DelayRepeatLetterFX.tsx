@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
 import { LetterFx } from "@/once-ui/components";
 
@@ -11,36 +10,30 @@ interface Props {
 }
 
 export default function DelayRepeatLetterFX(props: Props) {
+  // 1) Use a ref to hold LetterFx’s internal eventHandler. Start as `null`.
   const handlerRef = useRef<(() => void) | null>(null);
-  const [active, setActive] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
+  // 2) A boolean that flips every 10 seconds
+  const [toggle, setToggle] = useState(false);
+  // 3) Flip `toggle` every 10s
   useEffect(() => {
-    if (!active || !handlerRef.current) return;
+    const id = setInterval(() => {
+      setToggle((prev) => !prev);
+    }, props.delay || 10_000);
 
-    const delay = props.delay ?? 10_000;
-
-    timeoutRef.current = setTimeout(() => {
-      handlerRef.current?.();
-
-      intervalRef.current = setInterval(() => {
-        handlerRef.current?.();
-      }, delay);
-    }, delay);
-
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [active, props.delay]);
+    return () => clearInterval(id);
+  }, []);
+  // 4) Whenever `toggle` changes, call handlerRef.current (if non-null)
+  useEffect(() => {
+    if (handlerRef.current) {
+      handlerRef.current();
+    }
+  }, [toggle]);
 
   return (
     <LetterFx
       trigger="custom"
-      onTrigger={(eventHandler: (() => void) | null) => {
+      onTrigger={(eventHandler) => {
         handlerRef.current = eventHandler;
-        setActive(true);
       }}
       speed={props.speed || "medium"}
       className={props.className || undefined}
