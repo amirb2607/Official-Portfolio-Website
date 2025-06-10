@@ -35,7 +35,7 @@ export default function RootLayout({
       suppressHydrationWarning
       as="html"
       lang="en"
-      fillHeight={false}
+      fillHeight={true}
       background="page"
       data-neutral={style.neutral}
       data-brand={style.brand}
