@@ -84,8 +84,8 @@ const meta = {
   home: {
     path: "/",
     title: "Amir B. | Portfolio",
-    keywords: "Amir, Amir B., amirb.dev, amirb, amirdev, amirbdev, portfolio, web developer, software engineer, projects, skills, contact",
-    description: "Amir B.'s Personal Website! Showcasing development projects, skills, and contact information.",
+    keywords: "Amir, Amir Badrudeen, Amir B, amirb.dev, amirb, amirdev, amirbdev, portfolio, web developer, software engineer, projects, skills, contact",
+    description: "Amir B's Personal Website! Showcasing development projects, skills, and contact information.",
     image: "/og/home.jpg",
     canonical: "https://amirb.dev",
     robots: "index,follow",

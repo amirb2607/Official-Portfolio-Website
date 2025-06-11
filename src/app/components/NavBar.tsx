@@ -1,22 +1,29 @@
 "use client";
-import { Badge, Button, Icon, Line, Logo, Row, ThemeSwitcher } from "@/once-ui/components";
+import {
+  Badge,
+  Button,
+  IconButton,
+  Line,
+  Logo,
+  Row,
+  ThemeSwitcher,
+} from "@/once-ui/components";
 
 export default function NavBar() {
   return (
-    // Blurred pill-shaped Navbar using Once UI props
-    // TODO: Make NavBar Sticky!
-    <Row 
-      horizontal="center"
-      vertical="center"
-      padding="xs"
-      background="overlay"
-      radius="full"
-      gap="xl"
-      hide='s' 
-      // TODO: Create Smaller Mobile NavBar that will be at the bottom of the screen
-      mobileDirection="column"
-    >
-      <Badge
+    <>
+      {/* Desktop Navbar */}
+      <Row
+        horizontal="center"
+        vertical="center"
+        padding="xs"
+        background="surface"
+        radius="full"
+        gap="xl"
+        hide="s"
+        zIndex={10}
+      >
+        <Badge
         border="neutral-alpha-medium"
         background="overlay"
         vertical="center"
@@ -35,5 +42,28 @@ export default function NavBar() {
         <ThemeSwitcher />
       </Row>
     </Row>
+
+      {/* Mobile Navbar positioned at the bottom of viewport */}
+      <Row
+        show="s"
+        horizontal="space-around"
+        vertical="center"
+        padding="xs"
+        background="surface"
+        gap="m"
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          zIndex: 50,
+        }}
+      >
+        <IconButton icon="sparkle" variant="ghost" href="#about" />
+        <IconButton icon="computer" variant="ghost" href="#projects" />
+        <IconButton icon="clipboard" variant="ghost" href="#contact" />
+        <ThemeSwitcher />
+      </Row>
+    </>
   );
 }
