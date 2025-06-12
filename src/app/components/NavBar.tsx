@@ -57,6 +57,7 @@ export default function NavBar() {
           left: 0,
           width: "100%",
           zIndex: 50,
+          paddingBottom: 25,
         }}
       >
         <IconButton icon="sparkle" variant="ghost" href="#about" />
