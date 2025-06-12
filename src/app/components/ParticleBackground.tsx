@@ -9,7 +9,7 @@ export default function ParticleBackground() {
       position="fixed"
       className="z-index--1"
       interactive
-      density={450}
+      density={250}
       speed={1.5}
       size="2"
       interactionRadius={15}

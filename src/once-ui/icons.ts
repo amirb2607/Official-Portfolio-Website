@@ -30,6 +30,9 @@ import {
   HiOutlinePlus,
   HiOutlineCalendar,
   HiOutlineDocumentDuplicate,
+  HiCommandLine,
+  HiOutlineCommandLine,
+  HiOutlineDevicePhoneMobile,
 } from "react-icons/hi2";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -61,7 +64,10 @@ export const iconLibrary: Record<string, IconType> = {
   search: HiOutlineMagnifyingGlass,
   security: HiOutlineShieldCheck,
   sparkle: HiOutlineSparkles,
-  computer: HiOutlineComputerDesktop
+  computer: HiOutlineComputerDesktop,
+  cmd: HiCommandLine,
+  outlinecmd: HiOutlineCommandLine,
+  phone: HiOutlineDevicePhoneMobile,
 };
 
 export type IconLibrary = typeof iconLibrary;

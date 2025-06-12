@@ -27,7 +27,7 @@ const font = {
 // default customization applied to the HTML in the main layout.tsx
 const style = {
   theme: "dark", // dark | light - not needed when using ThemeProvider
-  neutral: "slate", // sand | gray | slate
+  neutral: "custom", // sand | gray | slate | custom :D
   brand: "violet", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   accent: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast | inverse
@@ -83,9 +83,9 @@ const effects = {
 const meta = {
   home: {
     path: "/",
-    title: "Amir B. | Portfolio",
-    keywords: "Amir, Amir Badrudeen, Amir B, amirb.dev, amirb, amirdev, amirbdev, portfolio, web developer, software engineer, projects, skills, contact",
-    description: "Amir B's Personal Website! Showcasing development projects, skills, and contact information.",
+    title: "Amir B | Website",
+    keywords: "Amir, Amir Badrudeen, Amir B, amirb.dev, amirb, amirdev, amirbdev, portfolio, web developer, software engineer, projects, skills, contact, apps, web apps, web applications",
+    description: "Amir B's Personal Website! Showcasing development projects, skills, contact information and various web applications.",
     image: "/og/home.jpg",
     canonical: "https://amirb.dev",
     robots: "index,follow",
@@ -108,7 +108,6 @@ const schema = {
 // social links
 const social = {
   linkedin: "https://www.linkedin.com/in/amir-bad/",
-  discord: "https://discord.com/users/216198697178890240",
 };
 
 export { baseURL, font, style, meta, schema, social, effects };

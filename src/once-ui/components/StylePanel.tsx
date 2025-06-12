@@ -45,7 +45,7 @@ const colorOptions = {
     "emerald",
     "aqua",
   ],
-  neutral: ["sand", "gray", "slate"],
+  neutral: ["sand", "gray", "slate", "black"],
 };
 
 const StylePanel = forwardRef<HTMLDivElement, StylePanelProps>(({ ...rest }, ref) => {
