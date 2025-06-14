@@ -11,8 +11,10 @@ import {
   ThemeSwitcher,
   Text,
 } from "@/once-ui/components";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
+  const pathname = usePathname(); //Variable to hold current path.
   // State to hold EST (NYC) time
   const [time, setTime] = useState(() =>
     new Date().toLocaleTimeString("en-US", { timeZone: "America/New_York" })
@@ -43,7 +45,7 @@ export default function NavBar() {
       >
         <Column fillWidth paddingLeft="s">
           <Text variant="body-default-s" wrap="balance">
-            USA/NYC
+            America/NYC
           </Text>
         </Column>
 
@@ -62,7 +64,7 @@ export default function NavBar() {
         <Row gap="m" vertical="center">
           <Button
             id="About"
-            variant="tertiary"
+            variant={pathname === "/about" ? "primary" : "tertiary"}
             arrowIcon
             prefixIcon="person"
             href="/about"
@@ -71,7 +73,7 @@ export default function NavBar() {
           </Button>
           <Button
             id="Projects"
-            variant="tertiary"
+            variant={pathname === "/projects" ? "primary" : "tertiary"}
             arrowIcon
             prefixIcon="outlinecmd"
             href="/projects"
@@ -80,7 +82,7 @@ export default function NavBar() {
           </Button>
           <Button
             id="Apps"
-            variant="tertiary"
+            variant={pathname === "/apps" ? "primary" : "tertiary"}
             arrowIcon
             prefixIcon="phone"
             href="/apps"
@@ -106,6 +108,7 @@ export default function NavBar() {
         horizontal="space-around"
         vertical="center"
         padding="xs"
+        paddingTop="s"
         background="surface"
         gap="m"
         style={{
@@ -117,9 +120,10 @@ export default function NavBar() {
           paddingBottom: 25,
         }}
       >
-        <IconButton icon="person" variant="ghost" href="#about" />
-        <IconButton icon="outlinecmd" variant="ghost" href="#projects" />
-        <IconButton icon="phone" variant="ghost" href="#apps" />
+        <IconButton icon="home" variant={pathname === "/" ? "primary" : "ghost"} href="/" />
+        <IconButton icon="person" variant={pathname === "/about" ? "primary" : "ghost"} href="/about" />
+        <IconButton icon="outlinecmd" variant={pathname === "/projects" ? "primary" : "ghost"} href="/projects" />
+        <IconButton icon="phone" variant={pathname === "/apps" ? "primary" : "ghost"} href="/apps" />
         <ThemeSwitcher />
       </Row>
     </>
