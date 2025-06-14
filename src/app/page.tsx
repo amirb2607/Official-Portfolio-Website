@@ -1,25 +1,9 @@
 import { Column, Text, Badge, RevealFx, Tag } from "@/once-ui/components";
 import DelayRepeatLetterFX from "./components/DelayRepeatLetterFX";
 import AutoScrollTechStack from "./components/AutoScrollTechStack";
-import { Schema } from "@/once-ui/modules";
-import { baseURL, meta, schema } from "./resources/once-ui.config";
 
 export default function Home() {
   return (
-    <>
-    <Schema //SEO
-      as="website"
-      baseURL={baseURL}
-      path={meta.home.path}
-      title={meta.home.title}
-      description={meta.home.description}
-      image={`/api/og/generate?title=${encodeURIComponent(meta.home.title)}`}
-      author={{
-        name: schema.name,
-        //url: `${baseURL}${schema.path}`,
-        //image: `${baseURL}${schema.avatar}`,
-      }}
-    />
     <RevealFx speed="fast" translateY={5}>
       <Column fillWidth fillHeight center padding="xs">
         <Column center maxWidth="s" gap="l" marginTop="l">
@@ -43,6 +27,5 @@ export default function Home() {
         <Badge id="temp" icon="outlinecmd" title="My Github" href="https://github.com/amirb2607" />
       </Column>
     </RevealFx>
-    </>
   );
 }

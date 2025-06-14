@@ -83,14 +83,26 @@ const effects = {
 const meta = {
   home: {
     path: "/",
-    title: "Amir B | Website",
+    title: "Amir B | Home",
     keywords: "Amir, Amir Badrudeen, Amir B, amirb.dev, amirb, amirdev, amirbdev, portfolio, web developer, software engineer, projects, skills, contact, apps, web apps, web applications",
-    description: "Amir B's Personal Website! Showcasing development projects, skills, contact information and various web applications.",
-    image: "/og/home.jpg",
+    description: "Amir Badrudeen's Personal Website! Showcasing Development Projects/Apps, About & Contact Information.",
+    image: "/og/home.png",
     canonical: "https://amirb.dev",
     robots: "index,follow",
     alternates: [
       { href: "https://amirb.dev", hrefLang: "en" },
+    ],
+  },
+  about: {
+    path: "/about",
+    title: "Amir B | About",
+    keywords: "Amir, Amir Badrudeen, Amir B, about, amirb.dev/about, amirb.dev, amirb, amirdev, amirbdev, web developer, software engineer, web apps, web applications",
+    description: "Amir Badrudeen's About Page! Learn more about me.",
+    image: "/og/home.png",
+    canonical: "https://amirb.dev/about",
+    robots: "index,follow",
+    alternates: [
+      { href: "https://amirb.dev/about", hrefLang: "en" },
     ],
   },
   // add more routes and reference them in page.tsx
@@ -98,7 +110,7 @@ const meta = {
 
 // default schema data
 const schema = {
-  logo: "",
+  logo: "/public/trademark/icon_dark.svg",
   type: "website",
   name: "Amir B.",
   description: meta.home.description,
