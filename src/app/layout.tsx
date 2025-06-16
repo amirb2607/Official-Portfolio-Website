@@ -14,6 +14,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import ParticleBackground from "./components/ParticleBackground";
 import UnderDevBanner from "./components/UnderDevBanner";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -129,6 +130,7 @@ export default function RootLayout({
             <ParticleBackground /> {/* Added Particle Background effect to layout */}
             <UnderDevBanner />
             <NavBar />
+            <Footer />
             {children}
           </Column>
         </ToastProvider>

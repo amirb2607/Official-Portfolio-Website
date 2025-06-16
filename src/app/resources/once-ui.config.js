@@ -83,7 +83,7 @@ const effects = {
 const meta = {
   home: {
     path: "/",
-    title: "Amir B | Home",
+    title: "Amir B | Home - Personal Website",
     keywords: "Amir, Amir Badrudeen, Amir B, amirb.dev, amirb, amirdev, amirbdev, portfolio, web developer, software engineer, projects, skills, contact, apps, web apps, web applications",
     description: "Amir Badrudeen's Personal Website! Showcasing Development Projects/Apps, About & Contact Information.",
     image: "/og/home.png",
@@ -120,6 +120,7 @@ const schema = {
 // social links
 const social = {
   linkedin: "https://www.linkedin.com/in/amir-bad/",
+  github: "https://github.com/amirb2607",
 };
 
 export { baseURL, font, style, meta, schema, social, effects };

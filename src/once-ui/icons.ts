@@ -35,6 +35,7 @@ import {
   HiOutlineDevicePhoneMobile,
   HiOutlineHome,
 } from "react-icons/hi2";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -70,6 +71,8 @@ export const iconLibrary: Record<string, IconType> = {
   outlinecmd: HiOutlineCommandLine,
   phone: HiOutlineDevicePhoneMobile,
   home: HiOutlineHome,
+  github: FaGithub,
+  linkedin: FaLinkedin,
 };
 
 export type IconLibrary = typeof iconLibrary;
