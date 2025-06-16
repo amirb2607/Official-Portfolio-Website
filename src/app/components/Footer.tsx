@@ -1,3 +1,4 @@
+"use client";
 import { Row, Text, IconButton } from "@/once-ui/components";
 import { social } from "../resources/once-ui.config";
 import styles from "../styles/Footer.module.scss"; // or your CSS file
