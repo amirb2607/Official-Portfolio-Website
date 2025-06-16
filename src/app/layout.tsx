@@ -130,8 +130,8 @@ export default function RootLayout({
             <ParticleBackground /> {/* Added Particle Background effect to layout */}
             <UnderDevBanner />
             <NavBar />
-            <Footer />
             {children}
+            <Footer />
           </Column>
         </ToastProvider>
       </ThemeProvider>
