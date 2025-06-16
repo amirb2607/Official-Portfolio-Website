@@ -131,8 +131,8 @@ export default function RootLayout({
             <UnderDevBanner />
             <NavBar />
             {children}
-            <Footer />
           </Column>
+          <Footer />
         </ToastProvider>
       </ThemeProvider>
     </Flex>

@@ -3,6 +3,7 @@ import { Row, Text, IconButton } from "@/once-ui/components";
 import { social } from "../resources/once-ui.config";
 import styles from "../styles/Footer.module.scss";
 
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
