@@ -9,6 +9,7 @@ export default function Footer() {
   return (
     <Row
       as="footer"
+      position="fixed"
       background="surface"
       padding="s"
       horizontal="space-between"
