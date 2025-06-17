@@ -18,7 +18,7 @@ export default function Footer() {
       className={styles.footer}
 
     >
-      <Text variant="body-default-s">
+      <Text variant="label-default-s" onBackground="neutral-medium">
         © 2025 - {year} Amir Badrudeen - All Rights Reserved.
       </Text>
       <Row gap="s">

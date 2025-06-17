@@ -15,6 +15,7 @@ import ParticleBackground from "./components/ParticleBackground";
 import UnderDevBanner from "./components/UnderDevBanner";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import { schema } from "@/app/resources/once-ui.config";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -63,6 +64,7 @@ export default function RootLayout({
         title={meta.home.title}
         description={meta.home.description}
         path={meta.home.path}
+        author={schema.author}
       />
       <head>
         <script
@@ -131,8 +133,8 @@ export default function RootLayout({
             <UnderDevBanner />
             <NavBar />
             {children}
+            <Footer />
           </Column>
-          <Footer />
         </ToastProvider>
       </ThemeProvider>
     </Flex>

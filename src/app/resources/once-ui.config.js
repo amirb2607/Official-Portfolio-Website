@@ -95,7 +95,7 @@ const meta = {
   },
   about: {
     path: "/about",
-    title: "Amir B | About",
+    title: "Amir B | About - Personal Website",
     keywords: "Amir, Amir Badrudeen, Amir B, about, amirb.dev/about, amirb.dev, amirb, amirdev, amirbdev, web developer, software engineer, web apps, web applications",
     description: "Amir Badrudeen's About Page! Learn more about me.",
     image: "/og/home.png",
@@ -105,6 +105,30 @@ const meta = {
       { href: "https://amirb.dev/about", hrefLang: "en" },
     ],
   },
+  projects: {
+    path: "/projects",
+    title: "Amir B | Projects - Personal Website",
+    keywords: "Amir, Amir Badrudeen, Amir B, projects, amirb.dev/projects, amirb.dev, amirb, amirdev, amirbdev, web developer, software engineer, web apps, web applications",
+    description: "Amir Badrudeen's Projects Page! Find all the projects I have and am currently working on!",
+    image: "/og/home.png",
+    canonical: "https://amirb.dev/projects",
+    robots: "index,follow",
+    alternates: [
+      { href: "https://amirb.dev/projects", hrefLang: "en" },
+    ],
+  },
+  apps: {
+    path: "/apps",
+    title: "Amir B | Apps - Personal Website",
+    keywords: "Amir, Amir Badrudeen, Amir B, apps, amirb.dev/apps, amirb.dev, amirb, amirdev, amirbdev, web developer, software engineer, web apps, web applications",
+    description: "Amir Badrudeen's Apps Page! This is where I will host various web applications I create!",
+    image: "/og/home.png",
+    canonical: "https://amirb.dev/apps",
+    robots: "index,follow",
+    alternates: [
+      { href: "https://amirb.dev/apps", hrefLang: "en" },
+    ],
+  },
   // add more routes and reference them in page.tsx
 };
 
@@ -112,9 +136,12 @@ const meta = {
 const schema = {
   logo: "/public/trademark/icon_dark.svg",
   type: "website",
-  name: "Amir B.",
   description: meta.home.description,
   email: "me@amirb.dev",
+  author: {
+    name: "Amir Badrudeen",
+    url: "https://www.amirb.dev/"
+  }
 };
 
 // social links
