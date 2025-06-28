@@ -1,5 +1,5 @@
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://www.amirb.dev";
+const baseURL = "https://amirb.dev";
 
 // Import and set font for each variant
 import { Red_Hat_Display } from "next/font/google";
@@ -140,7 +140,7 @@ const schema = {
   email: "me@amirb.dev",
   author: {
     name: "Amir Badrudeen",
-    url: "https://www.amirb.dev/"
+    url: "https://amirb.dev/"
   }
 };
 
