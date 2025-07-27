@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { LetterFx } from "@/once-ui/components";
+import { Column, LetterFx } from "@/once-ui/components";
 
 interface Props {
   text: string // Text to display 
@@ -30,15 +30,17 @@ export default function DelayRepeatLetterFX(props: Props) {
   }, [toggle]);
 
   return (
-    <LetterFx
-      trigger="custom"
-      onTrigger={(eventHandler) => {
-        handlerRef.current = eventHandler;
-      }}
-      speed={props.speed || "medium"}
-      className={props.className || undefined}
-    >
-      {props.text}
-    </LetterFx>
+    <Column center> 
+      <LetterFx
+        trigger="custom"
+        onTrigger={(eventHandler) => {
+          handlerRef.current = eventHandler;
+        }}
+        speed={props.speed || "medium"}
+        className={props.className || undefined}
+      >
+        {props.text}
+      </LetterFx>
+    </Column>
   );
 }

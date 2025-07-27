@@ -1,6 +1,7 @@
-import { Column, Text } from "@/once-ui/components";
+import { Column, OgCard, RevealFx, Row, Text } from "@/once-ui/components";
 import { Meta } from "@/once-ui/modules";
 import { meta, baseURL } from "../resources/once-ui.config";
+import DelayRepeatLetterFX from "../components/DelayRepeatLetterFX";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -17,10 +18,29 @@ export async function generateMetadata() {
 
 export default function Apps() {
   return (
-    <>
-      <Column fillWidth fillHeight center>
-        <Text> On The Apps Page! </Text>
+    <RevealFx speed="fast" translateY={5} center>
+      <Column fillHeight gap="l" padding="l" paddingBottom="xl" >
+        <DelayRepeatLetterFX
+            text="My Web Applications!"
+            delay={10_000}
+            speed="slow"
+            className="font-display font-m font-strong" />
+        <Column center>
+          <Row gap="xl" maxWidth={"m"} >
+            <OgCard ogData={{
+                title: "My Private Search Engine",
+                description: "Used SearXNG & Docker to create a private search engine using a AWS EC2 instance. (Need to be authorized to access)",
+                image: "/images/searxng.png",
+                faviconUrl: "/trademark/icon-dark.svg",
+                url: "https://search.amirb.dev",
+              }} 
+              direction= "row" //Will change to Column when more apps are added
+              border="brand-alpha-weak"
+              shadow="xl"
+            />
+          </Row>
+        </Column>
       </Column>
-    </>
+    </RevealFx>    
   );
 }
