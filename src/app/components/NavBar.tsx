@@ -98,7 +98,7 @@ export default function NavBar() {
 
         {/* Display current local time */}
         <Column fillWidth horizontal="end" paddingRight="s">
-          <Text variant="code-strong-m">{time}</Text>
+          <Text variant="body-default-s">{time}</Text>
         </Column>
       </Row>
 

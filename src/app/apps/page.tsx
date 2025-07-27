@@ -29,10 +29,21 @@ export default function Apps() {
           <Row gap="xl" maxWidth={"m"} >
             <OgCard ogData={{
                 title: "My Private Search Engine",
-                description: "Used SearXNG & Docker to create a private search engine using a AWS EC2 instance. (Need to be authorized to access)",
+                description: "Used SearXNG, Docker & Caddy to create a private search engine using a AWS EC2 instance. (Need to be authorized to access)",
                 image: "/images/searxng.png",
                 faviconUrl: "/trademark/icon-dark.svg",
                 url: "https://search.amirb.dev",
+              }} 
+              direction= "row" //Will change to Column when more apps are added
+              border="brand-alpha-weak"
+              shadow="xl"
+            />
+            <OgCard ogData={{
+                title: "My Private Bookmark Manager",
+                description: "Used Shiori, Docker & Caddy to create a private bookmark manager using a AWS EC2 instance. (Need to be authorized to access)",
+                image: "/images/shiori_login.png",
+                faviconUrl: "/images/shiori.png",
+                url: "https://links.amirb.dev",
               }} 
               direction= "row" //Will change to Column when more apps are added
               border="brand-alpha-weak"
