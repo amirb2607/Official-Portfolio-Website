@@ -28,8 +28,8 @@ export default function Apps() {
         <Column center>
           <Row gap="xl" mobileDirection="column" >
             <OgCard ogData={{
-                title: "My Private Search Engine",
-                description: "Used SearXNG, Docker & Caddy to create a private search engine using a AWS EC2 instance. (Need to be authorized to access)",
+                title: "[Private] Search Engine",
+                description: "Used SearXNG, Docker & Caddy to create a private search engine using a AWS EC2 instance. [Need to be authorized to access]",
                 image: "/images/searxng.png",
                 faviconUrl: "/trademark/icon-dark.svg",
                 url: "https://search.amirb.dev",
@@ -39,8 +39,8 @@ export default function Apps() {
               shadow="xl"
             />
             <OgCard ogData={{
-                title: "My Private Bookmark Manager",
-                description: "Used Shiori, Docker & Caddy to create a private bookmark manager using a AWS EC2 instance. (Need to be authorized to access)",
+                title: "[Private] Bookmark Manager",
+                description: "Used Shiori, Docker & Caddy to create a private bookmark manager using a AWS EC2 instance. [Need to be authorized to access]",
                 image: "/images/shiori_login.png",
                 faviconUrl: "/images/shiori.png",
                 url: "https://links.amirb.dev",
