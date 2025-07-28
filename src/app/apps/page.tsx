@@ -26,7 +26,7 @@ export default function Apps() {
             speed="slow"
             className="font-display font-m font-strong" />
         <Column center>
-          <Row gap="xl" maxWidth={"m"} >
+          <Row gap="xl" mobileDirection="column" >
             <OgCard ogData={{
                 title: "My Private Search Engine",
                 description: "Used SearXNG, Docker & Caddy to create a private search engine using a AWS EC2 instance. (Need to be authorized to access)",
