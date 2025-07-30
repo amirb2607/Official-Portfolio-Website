@@ -25,8 +25,8 @@ export default function Apps() {
             delay={10_000}
             speed="slow"
             className="font-display font-m font-strong" />
-        <Column center>
-          <Row gap="xl" mobileDirection="column" > 
+        <Column center paddingBottom="xl" marginBottom="xl">
+          <Row gap="xl" mobileDirection="column" paddingX="xl"> 
             <OgCard ogData={{
                 title: "[Private] Search Engine",
                 description: "Used SearXNG, Docker & Caddy to create a private search engine using a AWS EC2 instance. [Need to be authorized to access]",
@@ -63,6 +63,6 @@ export default function Apps() {
           </Row>
         </Column>        
       </Column>
-    </RevealFx>    
+    </RevealFx>   
   );
 }

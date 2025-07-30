@@ -40,7 +40,7 @@ export default function RootLayout({
       suppressHydrationWarning
       as="html"
       lang="en"
-      fillHeight={true}
+      style={{ minHeight: '100vh' }}
       background="page"
       data-neutral={style.neutral}
       data-brand={style.brand}
