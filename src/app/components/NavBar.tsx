@@ -43,7 +43,7 @@ export default function NavBar() {
         hide="m"
         zIndex={10}
       >
-        <Column fillWidth paddingLeft="s">
+        <Column fillWidth paddingLeft="s" >
           <Text variant="body-default-s" wrap="balance">
             America/NYC
           </Text>

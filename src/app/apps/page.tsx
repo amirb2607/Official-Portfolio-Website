@@ -18,7 +18,7 @@ export async function generateMetadata() {
 
 export default function Apps() {
   return (
-    <RevealFx speed="fast" translateY={5} center>
+    <RevealFx speed="fast" translateY={5} center >
       <Column fillHeight gap="l" padding="l" paddingBottom="xl" >
         <DelayRepeatLetterFX
             text="My Web Applications!"
@@ -26,15 +26,15 @@ export default function Apps() {
             speed="slow"
             className="font-display font-m font-strong" />
         <Column center>
-          <Row gap="xl" mobileDirection="column" >
+          <Row gap="xl" mobileDirection="column" > 
             <OgCard ogData={{
                 title: "[Private] Search Engine",
                 description: "Used SearXNG, Docker & Caddy to create a private search engine using a AWS EC2 instance. [Need to be authorized to access]",
-                image: "/images/searxng.png",
-                faviconUrl: "/trademark/icon-dark.svg",
+                image: "/images/searxng_login.png",
+                faviconUrl: "/images/searxng.png",
                 url: "https://search.amirb.dev",
               }} 
-              direction= "row" //Will change to Column when more apps are added
+              direction= "column" 
               border="brand-alpha-weak"
               shadow="xl"
             />
@@ -45,12 +45,23 @@ export default function Apps() {
                 faviconUrl: "/images/shiori.png",
                 url: "https://links.amirb.dev",
               }} 
-              direction= "row" //Will change to Column when more apps are added
+              direction= "column" 
+              border="brand-alpha-weak"
+              shadow="xl"
+            />
+            <OgCard ogData={{
+                title: "[Private] Subscription Tracker",
+                description: "Used WallOS, Docker & Caddy to create a private subscription tracker using a AWS EC2 instance. [Need to be authorized to access]",
+                image: "/images/wallos_login.png",
+                faviconUrl: "/images/wallos.png",
+                url: "https://wallos.amirb.dev",
+              }} 
+              direction= "column" 
               border="brand-alpha-weak"
               shadow="xl"
             />
           </Row>
-        </Column>
+        </Column>        
       </Column>
     </RevealFx>    
   );
