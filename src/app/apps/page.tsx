@@ -18,6 +18,7 @@ export async function generateMetadata() {
 
 export default function Apps() {
   return (
+    //TODO: FIX REVEALFX on OGCARDS, Create OGCARD Loading State Instead of RevealFx
     <RevealFx speed="fast" translateY={5} center >
       <Column fillHeight gap="l" padding="l" paddingBottom="xl" >
         <DelayRepeatLetterFX
@@ -25,11 +26,12 @@ export default function Apps() {
             delay={10_000}
             speed="slow"
             className="font-display font-m font-strong" />
-        <Column center paddingBottom="xl" marginBottom="xl">
+
+        <Column center paddingBottom="l" >
           <Row gap="xl" mobileDirection="column" paddingX="xl"> 
             <OgCard ogData={{
                 title: "[Private] Search Engine",
-                description: "Used SearXNG, Docker & Caddy to create a private search engine using a AWS EC2 instance. [Need to be authorized to access]",
+                description: "Used SearXNG + Docker & Caddy to host a private search engine using a AWS EC2 instance on my domain! [Need to be authorized to access]",
                 image: "/images/searxng_login.png",
                 faviconUrl: "/images/searxng.png",
                 url: "https://search.amirb.dev",
@@ -40,7 +42,7 @@ export default function Apps() {
             />
             <OgCard ogData={{
                 title: "[Private] Bookmark Manager",
-                description: "Used Shiori, Docker & Caddy to create a private bookmark manager using a AWS EC2 instance. [Need to be authorized to access]",
+                description: "Used Shiori + Docker & Caddy to host a private bookmark manager using a AWS EC2 instance on my domain! [Need to be authorized to access]",
                 image: "/images/shiori_login.png",
                 faviconUrl: "/images/shiori.png",
                 url: "https://links.amirb.dev",
@@ -51,7 +53,7 @@ export default function Apps() {
             />
             <OgCard ogData={{
                 title: "[Private] Subscription Tracker",
-                description: "Used WallOS, Docker & Caddy to create a private subscription tracker using a AWS EC2 instance. [Need to be authorized to access]",
+                description: "Used WallOS + Docker & Caddy to host a private subscription tracker using a AWS EC2 instance on my domain! [Need to be authorized to access]",
                 image: "/images/wallos_login.png",
                 faviconUrl: "/images/wallos.png",
                 url: "https://wallos.amirb.dev",
@@ -61,7 +63,25 @@ export default function Apps() {
               shadow="xl"
             />
           </Row>
-        </Column>        
+        </Column>
+
+        <Column center paddingBottom="xl" marginBottom="xl">
+          <Row gap="xl" mobileDirection="column" paddingX="xl"> 
+            <OgCard ogData={{
+                title: "[Private] Docker Container Manager",
+                description: "Used Portainer + Docker & Caddy to host a private portainer manager using a AWS EC2 instance on my domain! [Need to be authorized to access]",
+                image: "/images/portainer_login.png",
+                faviconUrl: "/images/portainer.png",
+                url: "https://portainer.amirb.dev",
+              }} 
+              direction= "row" 
+              border="brand-alpha-weak"
+              shadow="xl"
+              mobileDirection="column"
+            />
+          </Row>
+        </Column>
+
       </Column>
     </RevealFx>   
   );

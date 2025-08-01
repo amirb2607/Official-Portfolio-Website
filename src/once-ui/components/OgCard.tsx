@@ -112,8 +112,8 @@ const OgCard = ({ url, ogData: providedOgData, direction = "column", ...card }: 
           {data.url && <Text variant="label-default-s" onBackground="neutral-weak">{formatDisplayUrl(data.url)}</Text>}
         </Row>
         <Column fillWidth gap="2" paddingX="4">
-          {data.title && <Text variant="label-strong-m">{data.title}</Text>}
-          {data.description && <Text variant="label-default-s" onBackground="neutral-weak">{data.description}</Text>}
+          {data.title && <Text variant="label-strong-m" align="center">{data.title}</Text>}
+          {data.description && <Text variant="label-default-s" onBackground="neutral-weak" wrap="balance" align="center" >{data.description}</Text>}
         </Column>
       </Column>
     </Card>
