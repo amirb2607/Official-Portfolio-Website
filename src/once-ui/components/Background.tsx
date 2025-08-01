@@ -6,6 +6,7 @@ import { Flex } from ".";
 import { DisplayProps } from "../interfaces";
 import styles from "./Background.module.scss";
 import classNames from "classnames";
+import ParticleBackground from "@/app/components/ParticleBackground";
 
 function setRef<T>(ref: React.Ref<T> | undefined, value: T | null) {
   if (typeof ref === "function") {
@@ -175,123 +176,126 @@ const Background = forwardRef<HTMLDivElement, BackgroundProps>(
     const adjustedY = gradient.y != null ? remap(gradient.y, 0, 100, 37.5, 62.5) : 50;
 
     return (
-      <Flex
-        ref={backgroundRef}
-        fill
-        className={classNames(mask && styles.mask, className)}
-        top="0"
-        left="0"
-        zIndex={0}
-        overflow="hidden"
-        style={{
-          ...maskStyle(),
-          ...style,
-        }}
-        {...rest}
-      >
-        {gradient.display && (
-          <Flex
-            position="absolute"
-            className={styles.gradient}
-            opacity={gradient.opacity}
-            pointerEvents="none"
-            style={{
-              ["--gradient-position-x" as string]: `${adjustedX}%`,
-              ["--gradient-position-y" as string]: `${adjustedY}%`,
-              ["--gradient-width" as string]:
-                gradient.width != null ? `${gradient.width / 4}%` : "25%",
-              ["--gradient-height" as string]:
-                gradient.height != null ? `${gradient.height / 4}%` : "25%",
-              ["--gradient-tilt" as string]: gradient.tilt != null ? `${gradient.tilt}deg` : "0deg",
-              ["--gradient-color-start" as string]: gradient.colorStart
-                ? `var(--${gradient.colorStart})`
-                : "var(--brand-solid-strong)",
-              ["--gradient-color-end" as string]: gradient.colorEnd
-                ? `var(--${gradient.colorEnd})`
-                : "var(--brand-solid-weak)",
-            }}
-          />
-        )}
-        {dots.display && (
-          <Flex
-            position="absolute"
-            top="0"
-            left="0"
-            fill
-            pointerEvents="none"
-            className={styles.dots}
-            opacity={dots.opacity}
-            style={
-              {
-                "--dots-color": `var(--${dotsColor})`,
-                "--dots-size": dotsSize,
-              } as React.CSSProperties
-            }
-          />
-        )}
-        {lines.display && (
-          <Flex
-            position="absolute"
-            top="0"
-            left="0"
-            fill
-            pointerEvents="none"
-            className={styles.lines}
-            opacity={lines.opacity}
-            style={
-              {
-                "--lines-angle": `${lines.angle ?? -45}deg`,
-                "--lines-color": `var(--${lines.color ?? "brand-on-background-weak"})`,
-                "--lines-thickness": `${lines.thickness ?? 1}px`,
-                "--lines-spacing": `var(--static-space-${lines.size ?? "8"})`,
-                background: `
-                repeating-linear-gradient(
-                  var(--lines-angle),
-                  var(--static-transparent),
-                  var(--static-transparent) calc(var(--lines-spacing) - var(--lines-thickness)),
-                  var(--lines-color) calc(var(--lines-spacing) - var(--lines-thickness)),
-                  var(--lines-color) var(--lines-spacing)
-                )
-              `,
-              } as React.CSSProperties
-            }
-          />
-        )}
-        {grid.display && (
-          <Flex
-            position="absolute"
-            top="0"
-            left="0"
-            fill
-            pointerEvents="none"
-            className={styles.grid}
-            opacity={grid.opacity}
-            style={{
-              backgroundSize: `
-                ${grid.width || "var(--static-space-32)"}
-                ${grid.height || "var(--static-space-32)"}`,
-              backgroundPosition: "0 0",
-              backgroundImage: `
-                linear-gradient(
-                  90deg,
-                  var(--${grid.color || "brand-on-background-weak"}) 0,
-                  var(--${grid.color || "brand-on-background-weak"}) 1px,
-                  var(--static-transparent) 1px,
-                  var(--static-transparent) ${grid.width || "var(--static-space-32)"}
-                ),
-                linear-gradient(
-                  0deg,
-                  var(--${grid.color || "brand-on-background-weak"}) 0,
-                  var(--${grid.color || "brand-on-background-weak"}) 1px,
-                  var(--static-transparent) 1px,
-                  var(--static-transparent) ${grid.height || "var(--static-space-32)"}
-                )
-              `,
-            }}
-          />
-        )}
-        {children}
-      </Flex>
+      <>
+        <ParticleBackground />
+        <Flex
+          ref={backgroundRef}
+          fill
+          className={classNames(mask && styles.mask, className)}
+          top="0"
+          left="0"
+          zIndex={0}
+          overflow="hidden"
+          style={{
+            ...maskStyle(),
+            ...style,
+          }}
+          {...rest}
+        >
+          {gradient.display && (
+            <Flex
+              position="absolute"
+              className={styles.gradient}
+              opacity={gradient.opacity}
+              pointerEvents="none"
+              style={{
+                ["--gradient-position-x" as string]: `${adjustedX}%`,
+                ["--gradient-position-y" as string]: `${adjustedY}%`,
+                ["--gradient-width" as string]:
+                  gradient.width != null ? `${gradient.width / 4}%` : "25%",
+                ["--gradient-height" as string]:
+                  gradient.height != null ? `${gradient.height / 4}%` : "25%",
+                ["--gradient-tilt" as string]: gradient.tilt != null ? `${gradient.tilt}deg` : "0deg",
+                ["--gradient-color-start" as string]: gradient.colorStart
+                  ? `var(--${gradient.colorStart})`
+                  : "var(--brand-solid-strong)",
+                ["--gradient-color-end" as string]: gradient.colorEnd
+                  ? `var(--${gradient.colorEnd})`
+                  : "var(--brand-solid-weak)",
+              }}
+            />
+          )}
+          {dots.display && (
+            <Flex
+              position="absolute"
+              top="0"
+              left="0"
+              fill
+              pointerEvents="none"
+              className={styles.dots}
+              opacity={dots.opacity}
+              style={
+                {
+                  "--dots-color": `var(--${dotsColor})`,
+                  "--dots-size": dotsSize,
+                } as React.CSSProperties
+              }
+            />
+          )}
+          {lines.display && (
+            <Flex
+              position="absolute"
+              top="0"
+              left="0"
+              fill
+              pointerEvents="none"
+              className={styles.lines}
+              opacity={lines.opacity}
+              style={
+                {
+                  "--lines-angle": `${lines.angle ?? -45}deg`,
+                  "--lines-color": `var(--${lines.color ?? "brand-on-background-weak"})`,
+                  "--lines-thickness": `${lines.thickness ?? 1}px`,
+                  "--lines-spacing": `var(--static-space-${lines.size ?? "8"})`,
+                  background: `
+                  repeating-linear-gradient(
+                    var(--lines-angle),
+                    var(--static-transparent),
+                    var(--static-transparent) calc(var(--lines-spacing) - var(--lines-thickness)),
+                    var(--lines-color) calc(var(--lines-spacing) - var(--lines-thickness)),
+                    var(--lines-color) var(--lines-spacing)
+                  )
+                `,
+                } as React.CSSProperties
+              }
+            />
+          )}
+          {grid.display && (
+            <Flex
+              position="absolute"
+              top="0"
+              left="0"
+              fill
+              pointerEvents="none"
+              className={styles.grid}
+              opacity={grid.opacity}
+              style={{
+                backgroundSize: `
+                  ${grid.width || "var(--static-space-32)"}
+                  ${grid.height || "var(--static-space-32)"}`,
+                backgroundPosition: "0 0",
+                backgroundImage: `
+                  linear-gradient(
+                    90deg,
+                    var(--${grid.color || "brand-on-background-weak"}) 0,
+                    var(--${grid.color || "brand-on-background-weak"}) 1px,
+                    var(--static-transparent) 1px,
+                    var(--static-transparent) ${grid.width || "var(--static-space-32)"}
+                  ),
+                  linear-gradient(
+                    0deg,
+                    var(--${grid.color || "brand-on-background-weak"}) 0,
+                    var(--${grid.color || "brand-on-background-weak"}) 1px,
+                    var(--static-transparent) 1px,
+                    var(--static-transparent) ${grid.height || "var(--static-space-32)"}
+                  )
+                `,
+              }}
+            />
+          )}
+          {children}
+        </Flex>
+      </>
     );
   },
 );

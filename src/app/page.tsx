@@ -6,12 +6,13 @@ export default function Home() {
   return (
     <RevealFx speed="fast" translateY={5}>
       <Column fillWidth fillHeight center padding="xs">
-        <Column center maxWidth="s" gap="l" marginTop="l">
+        <Column center maxWidth="m" gap="m" marginTop="xs">
+          <Badge id="new" title="New Apps" href="/apps" icon="phone" />
           <DelayRepeatLetterFX
             text="Hello World!"
             delay={10_000}
             speed="slow"
-            className="font-display font-xl font-strong py-3" />
+            className="font-display font-xl font-strong" />
           <RevealFx speed="fast" delay={0.1} translateY={2}>
             <Column fillWidth center>
               <Text variant="body-strong-xl" onBackground="neutral-medium" wrap="balance" align="center" paddingBottom="xs">
@@ -24,7 +25,7 @@ export default function Home() {
             </Column>
           </RevealFx>
         </Column>
-        <Badge id="temp" icon="outlinecmd" title="My Github" href="https://github.com/amirb2607" />
+        <Badge id="github" icon="outlinecmd" title="My Github" href="https://github.com/amirb2607" />
       </Column>
     </RevealFx>
   );

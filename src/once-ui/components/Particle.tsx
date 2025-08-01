@@ -78,8 +78,8 @@ const Particle = React.forwardRef<HTMLDivElement, ParticleProps>(
         particleEl.style.opacity = parsedOpacity;
         particleEl.style.transition = "transform 0.4s ease-out, opacity 0.6s ease-out";
 
-        const initialX = 10 + Math.random() * 80;
-        const initialY = 10 + Math.random() * 80;
+        const initialX = 0 + Math.random() * 100;
+        const initialY = 0 + Math.random() * 100;
 
         particleEl.style.left = `${initialX}%`;
         particleEl.style.top = `${initialY}%`;
@@ -122,8 +122,8 @@ const Particle = React.forwardRef<HTMLDivElement, ParticleProps>(
             }
           }
 
-          targetX = Math.max(5, Math.min(95, targetX));
-          targetY = Math.max(5, Math.min(95, targetY));
+          targetX = Math.max(0, Math.min(100, targetX));
+          targetY = Math.max(0, Math.min(100, targetY));
 
           particleTargets.set(particleEl, {
             x: targetX,

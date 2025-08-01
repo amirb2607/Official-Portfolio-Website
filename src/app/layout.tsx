@@ -129,7 +129,6 @@ export default function RootLayout({
                 color: effects.lines.color,
               }}
             />
-            <ParticleBackground /> {/* Added Particle Background effect to layout */}
             <UnderDevBanner />
             <NavBar />
             {children}

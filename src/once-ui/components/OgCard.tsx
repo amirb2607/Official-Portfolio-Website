@@ -91,6 +91,7 @@ const OgCard = ({ url, ogData: providedOgData, direction = "column", ...card }: 
           sizes="320px"
           aspectRatio="16/9" 
           border="neutral-alpha-weak"
+          quality={100}
           src={proxiedImageUrl}
         />
       )}

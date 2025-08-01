@@ -16,6 +16,7 @@ export interface MediaProps extends React.ComponentProps<typeof Flex> {
   unoptimized?: boolean;
   sizes?: string;
   priority?: boolean;
+  quality?: number;
 }
 
 const Media: React.FC<MediaProps> = ({
@@ -29,6 +30,7 @@ const Media: React.FC<MediaProps> = ({
   unoptimized = false,
   priority,
   sizes = "100vw",
+  quality = 75,
   ...rest
 }) => {
   const [isEnlarged, setIsEnlarged] = useState(false);
@@ -166,6 +168,7 @@ const Media: React.FC<MediaProps> = ({
             priority={priority}
             sizes={sizes}
             unoptimized={unoptimized}
+            quality={quality}
             fill
             style={{
               objectFit: objectFit,
@@ -221,6 +224,7 @@ const Media: React.FC<MediaProps> = ({
                 fill
                 sizes="90vw"
                 unoptimized={unoptimized}
+                quality={quality}
                 style={{
                   objectFit: "contain",
                 }}
