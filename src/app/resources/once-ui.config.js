@@ -148,6 +148,7 @@ const schema = {
 const social = {
   linkedin: "https://www.linkedin.com/in/amir-bad/",
   github: "https://github.com/amirb2607",
+  status: "https://status.amirb.dev",
 };
 
 export { baseURL, font, style, meta, schema, social, effects };

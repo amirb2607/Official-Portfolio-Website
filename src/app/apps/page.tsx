@@ -79,6 +79,18 @@ export default function Apps() {
               shadow="xl"
               mobileDirection="column"
             />
+            <OgCard ogData={{
+                title: "[Private] Uptime Monitoring",
+                description: "Used Uptime Kuma + Docker & Caddy to host a private uptime monitoring service. [Need to be authorized to access main dashboard, public status page is available]",
+                image: "/images/uptime_kuma_login.png",
+                faviconUrl: "/images/uptime_kuma.svg",
+                url: "https://kuma.amirb.dev",
+              }} 
+              direction= "row" 
+              border="brand-alpha-weak"
+              shadow="xl"
+              mobileDirection="column"
+            />
           </Row>
         </Column>
 

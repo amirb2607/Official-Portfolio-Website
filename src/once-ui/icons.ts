@@ -35,6 +35,7 @@ import {
   HiOutlineDevicePhoneMobile,
   HiOutlineHome,
 } from "react-icons/hi2";
+import { HiOutlineStatusOnline } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -73,6 +74,7 @@ export const iconLibrary: Record<string, IconType> = {
   home: HiOutlineHome,
   github: FaGithub,
   linkedin: FaLinkedin,
+  status: HiOutlineStatusOnline,
 };
 
 export type IconLibrary = typeof iconLibrary;

@@ -43,6 +43,16 @@ export default function Footer() {
               rel="noopener noreferrer"
             />
           )}
+          {social.status && (
+            <IconButton
+              icon="status"
+              variant="ghost"
+              href={social.status}
+              tooltip="Status"
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          )}
         </Row>
       </Row>
     </Column>
