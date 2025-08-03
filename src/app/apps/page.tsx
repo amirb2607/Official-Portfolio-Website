@@ -30,8 +30,8 @@ export default function Apps() {
         <Column center paddingBottom="l" >
           <Row gap="xl" mobileDirection="column" paddingX="xl"> 
             <OgCard ogData={{
-                title: "[Private] Search Engine",
-                description: "Used SearXNG + Docker & Caddy to host a private search engine using a AWS EC2 instance on my domain! [Need to be authorized to access]",
+                title: "SearxNG Private Search Engine",
+                description: "A self-hosted, privacy-first search engine powered by SearxNG, Docker & Caddy on AWS EC2. Instantly search the web without tracking—perfect for developers and privacy enthusiasts.",
                 image: "/images/searxng_login.png",
                 faviconUrl: "/images/searxng.png",
                 url: "https://search.amirb.dev",
@@ -41,8 +41,8 @@ export default function Apps() {
               shadow="xl"
             />
             <OgCard ogData={{
-                title: "[Private] Bookmark Manager",
-                description: "Used Shiori + Docker & Caddy to host a private bookmark manager using a AWS EC2 instance on my domain! [Need to be authorized to access]",
+                title: "Shiori Cloud Bookmark Manager",
+                description: "A lightweight, private bookmark manager built with Shiori, Docker & Caddy on AWS EC2. Organize, tag and access your favorite links from anywhere—no external accounts required.",
                 image: "/images/shiori_login.png",
                 faviconUrl: "/images/shiori.png",
                 url: "https://links.amirb.dev",
@@ -52,8 +52,8 @@ export default function Apps() {
               shadow="xl"
             />
             <OgCard ogData={{
-                title: "[Private] Subscription Tracker",
-                description: "Used WallOS + Docker & Caddy to host a private subscription tracker using a AWS EC2 instance on my domain! [Need to be authorized to access]",
+                title: "Wallos Subscription Tracker",
+                description: "Track and manage all your recurring subscriptions in one secure dashboard. Hosted on AWS EC2 with Docker & Caddy, Wallos sends you reminders and spending summaries so you never miss a renewal.",
                 image: "/images/wallos_login.png",
                 faviconUrl: "/images/wallos.png",
                 url: "https://wallos.amirb.dev",
@@ -68,28 +68,37 @@ export default function Apps() {
         <Column center paddingBottom="xl" marginBottom="xl">
           <Row gap="xl" mobileDirection="column" paddingX="xl"> 
             <OgCard ogData={{
-                title: "[Private] Docker Container Manager",
-                description: "Used Portainer + Docker & Caddy to host a private portainer manager using a AWS EC2 instance on my domain! [Need to be authorized to access]",
+                title: "Portainer Container Manager",
+                description: " A self-hosted Portainer instance for private Docker container management, secured by Caddy reverse proxy on AWS EC2. Monitor logs, resource usage and container health—all behind your own authentication layer.",
                 image: "/images/portainer_login.png",
                 faviconUrl: "/images/portainer.png",
                 url: "https://portainer.amirb.dev",
               }} 
-              direction= "row" 
+              direction= "column" 
               border="brand-alpha-weak"
               shadow="xl"
-              mobileDirection="column"
             />
             <OgCard ogData={{
-                title: "[Private] Uptime Monitoring",
-                description: "Used Uptime Kuma + Docker & Caddy to host a private uptime monitoring service. [Need to be authorized to access main dashboard, public status page is available]",
+                title: "Uptime Kuma Monitoring Service",
+                description: " Monitor the health and performance of your services with Uptime Kuma, Docker & Caddy on AWS EC2. Get real-time alerts, status pages and historical uptime reports—fully private and customizable.",
                 image: "/images/uptime_kuma_login.png",
                 faviconUrl: "/images/uptime_kuma.svg",
                 url: "https://kuma.amirb.dev",
               }} 
-              direction= "row" 
+              direction= "column" 
               border="brand-alpha-weak"
               shadow="xl"
-              mobileDirection="column"
+            />
+            <OgCard ogData={{
+                title: "ActualBudget Personal Budget Tracker",
+                description: "A self-hosted budgeting app powered by ActualBudget, Docker & Caddy on AWS EC2. Visualize your spending, set savings goals and explore interactive reports—securely on your own server.",
+                image: "/images/actual_budget_demo.png",
+                faviconUrl: "/images/actual_icon.png",
+                url: "https://budget.amirb.dev",
+              }} 
+              direction= "column" 
+              border="brand-alpha-weak"
+              shadow="xl"
             />
           </Row>
         </Column>
