@@ -27,6 +27,23 @@ export default function Apps() {
             speed="slow"
             className="font-display font-m font-strong" />
 
+        
+        <Column center paddingBottom="xl" >
+          <Row gap="xl" mobileDirection="column" paddingX="xl"> 
+            <OgCard ogData={{
+                title: "Excalidraw Collaborative Whiteboard",
+                description: " A self-hosted Excalidraw instance for collaborative sketching, powered by Docker & Nginx on my Homelab Server! Create, share and edit drawings in real-time with friends or colleagues—no external accounts needed.",
+                image: "/images/apps/excalidraw/excalidraw.png",
+                faviconUrl: "/images/apps/excalidraw/excalidraw-icon.png",
+                url: "https://excalidraw.amirb.dev",
+              }} 
+              direction= "row" 
+              border="brand-alpha-weak"
+              shadow="xl"
+            />
+          </Row>
+        </Column>
+
         <Column center paddingBottom="l" >
           <Row gap="xl" mobileDirection="column" paddingX="xl"> 
             <OgCard ogData={{
