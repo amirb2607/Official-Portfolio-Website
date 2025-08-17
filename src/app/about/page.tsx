@@ -18,7 +18,7 @@ export async function generateMetadata() {
 export default function About() {
   return (
     <Column fillWidth fillHeight padding="xl" gap="16" center>
-      <Row fillWidth fitHeight gap="16" s={{direction: "column"}}>
+      <Row fillWidth fitHeight gap="16" mobileDirection="column">
         <Column fillWidth center>
           <Card padding="l" maxWidth="xs">
             <Row gap="l" vertical="center">
