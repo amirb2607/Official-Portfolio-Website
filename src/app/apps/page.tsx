@@ -27,25 +27,30 @@ export default function Apps() {
             speed="slow"
             className="font-display font-m font-strong" />
 
-        
-        <Column center paddingBottom="xl" >
+        <Column center paddingBottom="l" >
           <Row gap="xl" mobileDirection="column" paddingX="xl"> 
             <OgCard ogData={{
-                title: "Excalidraw Collaborative Whiteboard",
-                description: " A self-hosted Excalidraw instance for collaborative sketching, powered by Docker & Nginx on my Homelab Server! Create, share and edit drawings in real-time with friends or colleagues—no external accounts needed.",
-                image: "/images/apps/excalidraw/excalidraw.png",
-                faviconUrl: "/images/apps/excalidraw/excalidraw-icon.png",
-                url: "https://excalidraw.amirb.dev",
+                title: "Private Self-Hosted AI Chatbot",
+                description: "My own Private AI Chatbot, powered by Docker & Cloudflare Tunnel using Ollama and OpenWebUI on my Homelab Server! Interact with various AI models like Llama 3, Mistral, and more—all without leaving your browser.",
+                image: "/images/apps/ai/home.png",
+                faviconUrl: "/images/apps/ai/icon.png",
+                url: "https://ai.amirb.dev",
               }} 
-              direction= "row" 
+              direction= "column" 
               border="brand-alpha-weak"
               shadow="xl"
             />
-          </Row>
-        </Column>
-
-        <Column center paddingBottom="l" >
-          <Row gap="xl" mobileDirection="column" paddingX="xl"> 
+            <OgCard ogData={{
+                title: "Excalidraw Collaborative Whiteboard",
+                description: "A self-hosted Excalidraw instance for collaborative sketching, powered by Docker & Cloudflare Tunnel on my Homelab Server! Create, share and edit drawings in real-time with friends or colleagues—no external accounts needed.",
+                image: "/images/apps/excalidraw/home.png",
+                faviconUrl: "/images/apps/excalidraw/icon.png",
+                url: "https://excalidraw.amirb.dev",
+              }} 
+              direction= "column" 
+              border="brand-alpha-weak"
+              shadow="xl"
+            />
             <OgCard ogData={{
                 title: "SearxNG Private Search Engine",
                 description: "A self-hosted, privacy-first search engine powered by SearxNG, Docker & Caddy on AWS EC2. Instantly search the web without tracking—perfect for developers and privacy enthusiasts.",
@@ -57,6 +62,22 @@ export default function Apps() {
               border="brand-alpha-weak"
               shadow="xl"
             />
+          </Row>
+        </Column>
+
+        <Column center paddingBottom="l" >
+          <Row gap="xl" mobileDirection="column" paddingX="xl">
+            <OgCard ogData={{
+                title: "ActualBudget Personal Budget Tracker",
+                description: "A self-hosted budgeting app powered by ActualBudget, Docker & Caddy on AWS EC2. Visualize your spending, set savings goals and explore interactive reports—securely on your own server.",
+                image: "/images/actual_budget_demo.png",
+                faviconUrl: "/images/actual_icon.png",
+                url: "https://budget.amirb.dev",
+              }} 
+              direction= "column" 
+              border="brand-alpha-weak"
+              shadow="xl"
+            /> 
             <OgCard ogData={{
                 title: "Shiori Cloud Bookmark Manager",
                 description: "A lightweight, private bookmark manager built with Shiori, Docker & Caddy on AWS EC2. Organize, tag and access your favorite links from anywhere—no external accounts required.",
@@ -107,11 +128,11 @@ export default function Apps() {
               shadow="xl"
             />
             <OgCard ogData={{
-                title: "ActualBudget Personal Budget Tracker",
-                description: "A self-hosted budgeting app powered by ActualBudget, Docker & Caddy on AWS EC2. Visualize your spending, set savings goals and explore interactive reports—securely on your own server.",
-                image: "/images/actual_budget_demo.png",
-                faviconUrl: "/images/actual_icon.png",
-                url: "https://budget.amirb.dev",
+                title: "Adguard Home Ad Blocker",
+                description: "A self-hosted ad blocker powered by Adguard Home, Docker & Cloudflare Tunnel on my Homelab Server! Block ads, trackers and malicious sites across your entire network—no client-side configuration needed.",
+                image: "/images/apps/adguard/home.png",
+                faviconUrl: "/images/apps/adguard/icon.png",
+                url: "https://adguard.amirb.dev",
               }} 
               direction= "column" 
               border="brand-alpha-weak"
