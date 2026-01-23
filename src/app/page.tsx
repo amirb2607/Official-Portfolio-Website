@@ -22,6 +22,9 @@ export default function Home() {
                 B.S. in Computer Science @ Brooklyn College
               </Text>
               <AutoScrollTechStack />
+              <Text variant="body-strong-xl" onBackground="brand-strong" wrap="balance" align="center" paddingBottom="l">
+                Testing Webhook!
+              </Text>
             </Column>
           </RevealFx>
         </Column>
