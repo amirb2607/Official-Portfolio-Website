@@ -18,30 +18,33 @@ export async function generateMetadata() {
 
 export default function About() {
   return (
-    <Column fillWidth fillHeight padding="xl" gap="16" center>
-      <Row fillWidth fitHeight gap="16" mobileDirection="column">
-
-        <Column paddingLeft="xl" center>
+    <Column fillWidth fillHeight center>
+      <Row fillWidth fitHeight mobileDirection="column">
+        <Column center padding="xl">
           <MatrixFx
-            fillWidth
-            height={24}
             colors={["brand-solid-strong"]}
+            fitWidth
             bulge={{
               type: "wave",     // S-curve diagonal flow
               duration: 6,
               intensity: 100,
               repeat: true
             }}>
-            <Card padding="l" maxWidth="xs">
+            <Card padding="l" maxWidth="s">
                 <Row gap="l" vertical="center">
-                  <Avatar value="A" size="xl" />
+                  <Avatar size="xl" src="/images/personal/headshot.png" />
                   <Column gap="xs">
-                    <Text variant="display-strong-m">Amir Badrudeen</Text>
-                    <Text variant="label-default-m">America/NYC</Text>
+                    <Text variant="display-strong-m" wrap="balance">Amir Badrudeen</Text>
+                    <Text variant="label-default-m" onBackground="neutral-medium" wrap="balance">Junior Software Developer/IT Support Specialist</Text>
+                    <Text variant="label-default-m">New York City</Text>
+                    <Text variant="label-default-s">English</Text>
                     <Text onBackground="neutral-medium" wrap="balance">
-                      Passionate about building exciting UI/UX interfaces and enhancing user experiences. I love creating intuitive designs that make technology accessible to everyone.
-                      With a keen eye for detail and a commitment to quality, I strive to deliver exceptional results in every project I undertake.
-                      When I'm not coding, you can find me exploring new homelab services or playing video games.
+                      Passionate about crafting seamless UI/UX experiences and building efficient software solutions, I take pride in creating technology that’s both intuitive and accessible. With a strong foundation 
+                      in Software Development and IT, I focus on designing reliable systems and interfaces that elevate user interaction while maintaining technical excellence.
+                    </Text>
+                    <Text onBackground="neutral-medium" wrap="balance">
+                      I’m constantly exploring new self-hosted and homelab solutions, fine-tuning infrastructure for performance and reliability, and keeping up with emerging trends in business 
+                      and investing. When I’m not working on code or infrastructure, you’ll usually find me gaming or experimenting with new tech ideas.
                     </Text>
                   </Column>
                 </Row>
@@ -54,7 +57,7 @@ export default function About() {
             <Text variant="display-strong-m">Education</Text>
           </Row>
           <Row fill center>
-            <Text variant="display-strong-m">Work Experience</Text>
+            <Text variant="display-strong-m">Experience</Text>
           </Row>
         </Column>
 

@@ -1,6 +1,6 @@
 # My Personal Portfolio Website
 
-A modern, responsive portfolio website built with Next.js and Once UI, deployed on Vercel.
+A modern, responsive portfolio website built with Next.js and Once UI, deployed using Pangolin Reverse Proxy on my VPS and my Homelab Server which builds and hosts the website.
 
 ## Overview
 
@@ -9,7 +9,8 @@ This repository contains the source code for my personal portfolio site. It will
 - **Next.js** for server-side rendering and routing
 - **Once UI** for a lightweight, customizable component library
 - **Tailwind CSS** (via Once UI tokens) for consistent styling
-- **Vercel** for continuous deployment
+- **Coolify via Homelab Server** for continuous, no downtime deployment
+- **Pangolin via VPS** for Reverse Proxy
 
 *Subject To Change*
 
@@ -21,7 +22,7 @@ This repository contains the source code for my personal portfolio site. It will
 - **Reusable Components**: Built with Once UI’s component library for rapid development.
 - **Theme Support**: Light and dark mode toggles (configurable via Once UI).
 - **SEO-Optimized**: Meta tags and Open Graph support for better search visibility.
-- **Easy Deployment**: One-click deploy to Vercel with automatic builds on push.
+- **Easy Deployment**: One-click deploy with automatic builds on push via webhook.
 
 ---
 
@@ -35,6 +36,9 @@ This repository contains the source code for my personal portfolio site. It will
 2. **Install Dependencies**
     ```bash
     npm install
-3. **Run Local Client using Next.js**
+3. **Run Local Dev Client using Next.js**
     ```bash
     npm run dev
+4. **Build App**
+    ```bash
+    npm install && npm run build && npm run start
