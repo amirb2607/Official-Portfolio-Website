@@ -2,6 +2,7 @@ import { Column, OgCard, RevealFx, Row, Text } from "@/once-ui/components";
 import { Meta } from "@/once-ui/modules";
 import { meta, baseURL } from "../resources/once-ui.config";
 import DelayRepeatLetterFX from "../components/DelayRepeatLetterFX";
+import { Button, ScrollToTop } from "@once-ui-system/core";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -21,6 +22,11 @@ export default function Apps() {
     //TODO: FIX REVEALFX on OGCARDS, Create OGCARD Loading State Instead of RevealFx
     <RevealFx speed="fast" translateY={5} center >
       <Column fillHeight gap="l" padding="l" paddingBottom="xl" >
+      <ScrollToTop center offset={100}>
+        <Button size="s" variant="secondary" prefixIcon="chevronUp">
+          Top
+        </Button>
+      </ScrollToTop>
         <DelayRepeatLetterFX
             text="My Web Applications!"
             delay={10_000}
