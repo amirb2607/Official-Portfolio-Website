@@ -23,7 +23,7 @@ export default function About() {
       <Column fillWidth fillHeight center>
           <Column center padding="l">
             <Card padding="m" maxWidth="s" radius="s-8">
-              <Row gap="l" vertical="center">
+              <Row gap="l" vertical="center" mobileDirection="column">
                 <Column gap="xs" center>
                   <Avatar size="xl" src="/images/personal/headshot.png" />
                   <Tag size="l" variant="info" prefixIcon="globe" label="New York City" />
