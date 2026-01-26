@@ -19,7 +19,7 @@ export async function generateMetadata() {
 export default function About() {
   return (
     //TODO: ADD ICONS/LINKS TO GITHUB, LINKEDIN, ETC. 
-    <RevealFx speed="slow" translateY={5}>
+    <RevealFx speed="medium" translateY={5}>
       <Column fillWidth fillHeight center>
           <Column center padding="l">
             <Card padding="m" maxWidth="s" radius="s-8">
