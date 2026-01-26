@@ -36,7 +36,8 @@ import {
   HiOutlineHome,
 } from "react-icons/hi2";
 import { HiOutlineStatusOnline } from "react-icons/hi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaGlobeAmericas  } from "react-icons/fa";
+import { LiaLanguageSolid } from "react-icons/lia";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -75,6 +76,8 @@ export const iconLibrary: Record<string, IconType> = {
   github: FaGithub,
   linkedin: FaLinkedin,
   status: HiOutlineStatusOnline,
+  globe: FaGlobeAmericas,
+  lang: LiaLanguageSolid,
 };
 
 export type IconLibrary = typeof iconLibrary;

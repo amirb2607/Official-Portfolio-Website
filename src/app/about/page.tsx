@@ -1,7 +1,7 @@
 import { Column, Text, Row, Avatar, Card } from "@/once-ui/components";
 import { Meta } from "@/once-ui/modules";
 import { meta, baseURL } from "../resources/once-ui.config";
-import { MatrixFx } from "@once-ui-system/core";
+import { MatrixFx, RevealFx, ShineFx, Tag } from "@once-ui-system/core";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -18,50 +18,46 @@ export async function generateMetadata() {
 
 export default function About() {
   return (
-    <Column fillWidth fillHeight center>
-      <Row fillWidth fitHeight mobileDirection="column">
-        <Column center padding="xl">
-          <MatrixFx
-            colors={["brand-solid-strong"]}
-            fitWidth
-            bulge={{
-              type: "wave",     // S-curve diagonal flow
-              duration: 6,
-              intensity: 100,
-              repeat: true
-            }}>
-            <Card padding="l" maxWidth="s">
-                <Row gap="l" vertical="center">
+    //TODO: ADD ICONS/LINKS TO GITHUB, LINKEDIN, ETC. 
+    <RevealFx speed="slow" translateY={5}>
+      <Column fillWidth fillHeight center>
+          <Column center padding="l">
+            <Card padding="m" maxWidth="s" radius="s-8">
+              <Row gap="l" vertical="center">
+                <Column gap="xs" center>
                   <Avatar size="xl" src="/images/personal/headshot.png" />
-                  <Column gap="xs">
-                    <Text variant="display-strong-m" wrap="balance">Amir Badrudeen</Text>
-                    <Text variant="label-default-m" onBackground="neutral-medium" wrap="balance">Junior Software Developer/IT Support Specialist</Text>
-                    <Text variant="label-default-m">New York City</Text>
-                    <Text variant="label-default-s">English</Text>
-                    <Text onBackground="neutral-medium" wrap="balance">
-                      Passionate about crafting seamless UI/UX experiences and building efficient software solutions, I take pride in creating technology that’s both intuitive and accessible. With a strong foundation 
-                      in Software Development and IT, I focus on designing reliable systems and interfaces that elevate user interaction while maintaining technical excellence.
-                    </Text>
-                    <Text onBackground="neutral-medium" wrap="balance">
-                      I’m constantly exploring new self-hosted and homelab solutions, fine-tuning infrastructure for performance and reliability, and keeping up with emerging trends in business 
-                      and investing. When I’m not working on code or infrastructure, you’ll usually find me gaming or experimenting with new tech ideas.
-                    </Text>
-                  </Column>
-                </Row>
+                  <Tag size="l" variant="info" prefixIcon="globe" label="New York City" />
+                  <Tag size="l" variant="info" prefixIcon="lang" label="English" />
+                </Column>
+
+                <Column gap="s" center>
+                  <Text variant="display-strong-m" wrap="balance">Amir Badrudeen</Text>
+                  <Row gap="xs">
+                    <Tag size="l" variant="info" prefixIcon="cmd" label="Junior Software Developer" />
+                    <Tag size="l" variant="info" prefixIcon="computer" label="IT Support Specialist" />
+                  </Row>
+                  
+                  <ShineFx baseOpacity={0.5} variant="body-default-s" onBackground="brand-strong" wrap="balance" align="center" speed={10} >
+                    Passionate about crafting seamless UI/UX experiences and building efficient software solutions, I take pride in creating technology that’s both intuitive and accessible. With a strong foundation 
+                    in Software Development and IT, I focus on designing reliable systems and interfaces that elevate user interaction while maintaining technical excellence.
+                  </ShineFx>
+
+                  <ShineFx baseOpacity={0.5} variant="body-default-s" onBackground="brand-strong" wrap="balance" align="center" speed={8} >
+                    I’m constantly exploring new self-hosted and homelab solutions, fine-tuning infrastructure for performance and reliability, and keeping up with emerging trends in business 
+                    and investing. When I’m not working on code or infrastructure, you’ll usually find me gaming or experimenting with new tech ideas.
+                  </ShineFx>
+                </Column>
+              </Row>
             </Card>
-          </MatrixFx>
-        </Column>
-
-        <Column fill gap="16">
-          <Row fill center>
-            <Text variant="display-strong-m">Education</Text>
-          </Row>
-          <Row fill center>
-            <Text variant="display-strong-m">Experience</Text>
-          </Row>
-        </Column>
-
-      </Row>
-    </Column>
+          </Column>
+          <RevealFx speed="slow" translateY={10}>
+            <Column fill gap="xl" center>
+              <Text variant="display-strong-m" padding="xl">Experience</Text>
+              <Text variant="display-strong-m">Education</Text>
+              <Text paddingBottom="xl" margin="xl"></Text>
+            </Column>
+          </RevealFx>
+      </Column>
+    </RevealFx>
   );
 }

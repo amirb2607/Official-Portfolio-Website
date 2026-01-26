@@ -41,7 +41,12 @@ export default function NavBar() {
         radius="full"
         gap="xl"
         hide="m"
-        zIndex={10}
+        zIndex={9}
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 50,
+        }}
       >
         <Column fillWidth paddingLeft="s" >
           <Text variant="body-default-s" wrap="balance">
@@ -98,7 +103,7 @@ export default function NavBar() {
 
         {/* Display current local time */}
         <Column fillWidth horizontal="end" paddingRight="s">
-          <Text variant="body-default-s">{time}</Text>
+          <Text variant="body-default-s" suppressHydrationWarning>{time}</Text>
         </Column>
       </Row>
 

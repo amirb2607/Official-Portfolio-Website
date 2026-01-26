@@ -4,7 +4,8 @@ import "@/once-ui/tokens/index.scss";
 import classNames from "classnames";
 
 import { baseURL, style, meta, font, effects } from "@/app/resources/once-ui.config";
-import { Background, Column, Flex, ToastProvider, ThemeProvider } from "@/once-ui/components";
+import { Background, Column, Flex, ThemeProvider } from "@/once-ui/components";
+import { iconLibrary } from "@/once-ui/icons";
 
 import { opacity, SpacingToken } from "@/once-ui/types";
 import { Meta, Schema } from "@/once-ui/modules";
@@ -13,6 +14,8 @@ import UnderDevBanner from "./components/UnderDevBanner";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { schema } from "@/app/resources/once-ui.config";
+import { LayoutProvider, ToastProvider, DataThemeProvider } from "@once-ui-system/core";
+import { IconProviders } from "@/once-ui/IconProviders";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -80,57 +83,63 @@ export default function RootLayout({
           }}
         />
       </head>
-      <ThemeProvider>
-        <ToastProvider>
-          <Column as="body" fillWidth margin="0" padding="0">
-            <Background
-              position="absolute"
-              mask={{
-                x: effects.mask.x,
-                y: effects.mask.y,
-                radius: effects.mask.radius,
-                cursor: effects.mask.cursor
-              }}
-              gradient={{
-                display: effects.gradient.display,
-                opacity: effects.gradient.opacity as opacity,
-                x: effects.gradient.x,
-                y: effects.gradient.y,
-                width: effects.gradient.width,
-                height: effects.gradient.height,
-                tilt: effects.gradient.tilt,
-                colorStart: effects.gradient.colorStart,
-                colorEnd: effects.gradient.colorEnd,
-              }}
-              dots={{
-                display: effects.dots.display,
-                opacity: effects.dots.opacity as opacity,
-                size: effects.dots.size as SpacingToken,
-                color: effects.dots.color,
-              }}
-              grid={{
-                display: effects.grid.display,
-                opacity: effects.grid.opacity as opacity,
-                color: effects.grid.color,
-                width: effects.grid.width,
-                height: effects.grid.height,
-              }}
-              lines={{
-                display: effects.lines.display,
-                opacity: effects.lines.opacity as opacity,
-                size: effects.lines.size as SpacingToken,
-                thickness: effects.lines.thickness,
-                angle: effects.lines.angle,
-                color: effects.lines.color,
-              }}
-            />
-            <UnderDevBanner />
-            <NavBar />
-            {children}
-            <Footer />
-          </Column>
-        </ToastProvider>
-      </ThemeProvider>
+      <LayoutProvider>
+        <ThemeProvider>
+          <DataThemeProvider>
+            <ToastProvider>
+              <IconProviders>
+                <Column as="body" fillWidth margin="0" padding="0">
+                  <Background
+                    position="absolute"
+                    mask={{
+                      x: effects.mask.x,
+                      y: effects.mask.y,
+                      radius: effects.mask.radius,
+                      cursor: effects.mask.cursor
+                    }}
+                    gradient={{
+                      display: effects.gradient.display,
+                      opacity: effects.gradient.opacity as opacity,
+                      x: effects.gradient.x,
+                      y: effects.gradient.y,
+                      width: effects.gradient.width,
+                      height: effects.gradient.height,
+                      tilt: effects.gradient.tilt,
+                      colorStart: effects.gradient.colorStart,
+                      colorEnd: effects.gradient.colorEnd,
+                    }}
+                    dots={{
+                      display: effects.dots.display,
+                      opacity: effects.dots.opacity as opacity,
+                      size: effects.dots.size as SpacingToken,
+                      color: effects.dots.color,
+                    }}
+                    grid={{
+                      display: effects.grid.display,
+                      opacity: effects.grid.opacity as opacity,
+                      color: effects.grid.color,
+                      width: effects.grid.width,
+                      height: effects.grid.height,
+                    }}
+                    lines={{
+                      display: effects.lines.display,
+                      opacity: effects.lines.opacity as opacity,
+                      size: effects.lines.size as SpacingToken,
+                      thickness: effects.lines.thickness,
+                      angle: effects.lines.angle,
+                      color: effects.lines.color,
+                    }}
+                  />
+                  <UnderDevBanner />
+                  <NavBar />
+                  {children}
+                  <Footer />
+                </Column>
+              </IconProviders>
+            </ToastProvider>
+          </DataThemeProvider>
+        </ThemeProvider>
+      </LayoutProvider>
     </Flex>
   );
 }
