@@ -43,6 +43,16 @@ export default function Footer() {
               rel="noopener noreferrer"
             />
           )}
+          {social.linkedin && (
+            <IconButton
+              icon="mail"
+              variant="ghost"
+              href={social.mail}
+              tooltip="Email"
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          )}
           {social.status && (
             <IconButton
               icon="status"

@@ -1,7 +1,8 @@
-import { Column, Text, Badge, RevealFx, Tag } from "@/once-ui/components";
+import { Column, Badge, RevealFx } from "@/once-ui/components";
 import DelayRepeatLetterFX from "./components/DelayRepeatLetterFX";
 import AutoScrollTechStack from "./components/AutoScrollTechStack";
 import { ShineFx } from "@once-ui-system/core";
+import HoverCardAvatar from "./components/HoverCardAvatar";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
             speed="slow"
             className="font-display font-xl font-strong" />
           <RevealFx speed="fast" delay={0.1} translateY={2}>
-            <Column fillWidth center>
+            <Column fillWidth center gap="xs">
+              <HoverCardAvatar />
               <ShineFx baseOpacity={0.65} variant="body-strong-xl" onBackground="brand-strong" wrap="balance" align="center" speed={5} paddingBottom="xs">
                I'm Amir an aspiring Junior Software Developer! After hours, I build my own projects. 
               </ShineFx>

@@ -36,6 +36,7 @@ import {
   HiOutlineHome,
 } from "react-icons/hi2";
 import { HiOutlineStatusOnline } from "react-icons/hi";
+import { IoIosMail } from "react-icons/io";
 import { FaGithub, FaLinkedin, FaGlobeAmericas  } from "react-icons/fa";
 import { LiaLanguageSolid } from "react-icons/lia";
 
@@ -78,6 +79,7 @@ export const iconLibrary: Record<string, IconType> = {
   status: HiOutlineStatusOnline,
   globe: FaGlobeAmericas,
   lang: LiaLanguageSolid,
+  mail: IoIosMail,
 };
 
 export type IconLibrary = typeof iconLibrary;
