@@ -56,7 +56,7 @@ export default function About() {
           </Column>
           <RevealFx speed="slow" translateY={10}>
             <Column fill gap="l" center>
-              <Heading variant="display-strong-m">Experience</Heading >
+              <Heading variant="display-strong-m">Experience</Heading>
               <Line maxWidth={14} background="info-strong"/>
               <Heading variant="display-strong-m">Education</Heading>
               <Line maxWidth={14} background="info-strong"/>
