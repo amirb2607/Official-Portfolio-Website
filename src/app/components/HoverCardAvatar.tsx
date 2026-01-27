@@ -6,7 +6,7 @@ export default function HoverCardAvatar() {
   return(
     <>
       <HoverCard
-        placement="right-end"
+        placement="bottom"
         trigger={<Avatar size="xl" src="/images/personal/headshot.png" tabIndex={0} statusIndicator={{ color: presence.color }} />}
       >
         <Column padding="20" gap="20" radius="l" maxWidth={24} background="surface" border="neutral-alpha-weak">
