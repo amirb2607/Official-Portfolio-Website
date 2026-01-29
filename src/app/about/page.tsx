@@ -1,7 +1,7 @@
 import { Column, Text, Row, Card } from "@/once-ui/components";
 import { Meta } from "@/once-ui/modules";
 import { meta, baseURL } from "../resources/once-ui.config";
-import { Button, Heading, Line, RevealFx, ShineFx, Tag } from "@once-ui-system/core";
+import { Button, Heading, Line, RevealFx, ShineFx, Tag, Timeline } from "@once-ui-system/core";
 import HoverCardAvatar from "../components/HoverCardAvatar";
 
 export async function generateMetadata() {
@@ -35,7 +35,7 @@ export default function About() {
                   <Tag size="l" variant="info" prefixIcon="lang" label="English" />
                 </Column>
                 <Column gap="s" center>
-                  <Text variant="display-strong-l" wrap="balance">Amir Badrudeen</Text>
+                  <Text variant="display-default-l" wrap="balance">Amir Badrudeen</Text>
                   <Row gap="xs">
                     <Tag size="l" variant="info" prefixIcon="cmd" label="Junior Software Developer" />
                     <Tag size="l" variant="info" prefixIcon="computer" label="IT Support Specialist" />
@@ -58,6 +58,7 @@ export default function About() {
             <Column fill gap="l" center>
               <Heading variant="display-strong-m">Experience</Heading>
               <Line maxWidth={14} background="info-strong"/>
+             
               <Heading variant="display-strong-m">Education</Heading>
               <Line maxWidth={14} background="info-strong"/>
               <Text paddingBottom="xl" margin="xl"></Text>
