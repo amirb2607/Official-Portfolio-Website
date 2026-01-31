@@ -73,7 +73,7 @@ export default function Home() {
             </Row>
             <Line maxWidth={19} background="info-strong" />
             <Column gap="m" paddingLeft="xl" paddingRight="xl">
-              <Card padding="m" gap="s" maxWidth="s" center>
+              <Card padding="m" gap="s" maxWidth="s" center href="/projects">
                 <Text variant="heading-strong-s">PortfolioHub</Text>
                 <Text variant="body-default-s" onBackground="neutral-weak">
                   Investment: Built a full-stack portfolio tracker using React Native, Expo & Firebase
