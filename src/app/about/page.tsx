@@ -22,13 +22,7 @@ export default function About() {
     <RevealFx speed="medium" translateY={5}>
       <Column fillWidth fillHeight center>
           <Column center padding="l">
-          {/* Add Card Hover Animation */}
-          <Animation zoomIn={1.1} triggerType="hover" center duration={400}
-            trigger={
-              <AboutCard />
-            }>
-            <AboutCard background="surface" />
-          </Animation>
+          <AboutCard />
           </Column>
           <RevealFx speed="slow" translateY={10}>
             <Column fill gap="l" center>

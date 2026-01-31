@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 // src/lib/presence.ts
 type Presence = {
   label: "Online" | "Busy" | "Offline";
@@ -40,8 +44,8 @@ function isInRange(nowMin: number, start: string, end: string) {
 function getNYTimeParts(timeZone: string) {
   const fmt = new Intl.DateTimeFormat("en-US", {
     timeZone,
-    hour: "numeric",        // Changed from "2-digit"
-    minute: "numeric",      // Changed from "2-digit"
+    hour: "numeric", // Changed from "2-digit"
+    minute: "numeric", // Changed from "2-digit"
     hour12: false,
     weekday: "short",
   });
@@ -50,7 +54,7 @@ function getNYTimeParts(timeZone: string) {
   const weekday = parts.find((p) => p.type === "weekday")?.value ?? "Mon";
   const hourStr = parts.find((p) => p.type === "hour")?.value ?? "0";
   const minuteStr = parts.find((p) => p.type === "minute")?.value ?? "0";
-  
+
   // Explicitly parse with parseInt to handle single digits
   const hour = parseInt(hourStr, 10);
   const minute = parseInt(minuteStr, 10);
@@ -74,4 +78,21 @@ export function getPresenceStatus(timeZone = "America/New_York"): Presence {
     return { label: "Busy", color: "yellow" };
   }
   return { label: "Online", color: "green" };
+}
+
+export function usePresenceStatus(
+  timeZone = "America/New_York",
+  intervalMs = 60_000
+): Presence {
+  const [presence, setPresence] = useState(() => getPresenceStatus(timeZone));
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setPresence(getPresenceStatus(timeZone)),
+      intervalMs
+    );
+    return () => clearInterval(id);
+  }, [timeZone, intervalMs]);
+
+  return presence;
 }

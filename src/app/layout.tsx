@@ -5,7 +5,6 @@ import classNames from "classnames";
 
 import { baseURL, style, meta, font, effects } from "@/app/resources/once-ui.config";
 import { Background, Column, Flex, ThemeProvider } from "@/once-ui/components";
-import { iconLibrary } from "@/once-ui/icons";
 
 import { opacity, SpacingToken } from "@/once-ui/types";
 import { Meta, Schema } from "@/once-ui/modules";
@@ -16,6 +15,7 @@ import Footer from "./components/Footer";
 import { schema } from "@/app/resources/once-ui.config";
 import { LayoutProvider, ToastProvider, DataThemeProvider } from "@once-ui-system/core";
 import { IconProviders } from "@/once-ui/IconProviders";
+import layoutStyles from "./styles/Layout.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -88,7 +88,13 @@ export default function RootLayout({
           <DataThemeProvider>
             <ToastProvider>
               <IconProviders>
-                <Column as="body" fillWidth margin="0" padding="0">
+                <Column
+                  as="body"
+                  fillWidth
+                  margin="0"
+                  padding="0"
+                  className={layoutStyles.pageBody}
+                >
                   <Background
                     position="absolute"
                     mask={{

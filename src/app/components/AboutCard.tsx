@@ -21,7 +21,7 @@ export default function AboutCard({ background = "surface" }: AboutCardProps) {
           <Tag size="l" variant="info" prefixIcon="lang" label="English" />
         </Column>
         <Column gap="s" center>
-          <Text variant="display-default-l" wrap="balance">Amir Badrudeen</Text>
+          <Text variant="display-strong-l" wrap="balance">Amir Badrudeen</Text>
           <Row gap="xs">
             <Tag size="l" variant="info" prefixIcon="cmd" label="Junior Software Developer" />
             <Tag size="l" variant="info" prefixIcon="computer" label="IT Support Specialist" />

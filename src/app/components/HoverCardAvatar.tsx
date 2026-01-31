@@ -1,8 +1,10 @@
+"use client";
+
 import { Avatar, Column, HoverCard, Row, Text, Tag } from "@once-ui-system/core";
-import { getPresenceStatus } from "../hooks/usePresenceStatus";
+import { usePresenceStatus } from "../hooks/usePresenceStatus";
 
 export default function HoverCardAvatar() {
-  const presence = getPresenceStatus();
+  const presence = usePresenceStatus();
   return(
     <>
       <HoverCard

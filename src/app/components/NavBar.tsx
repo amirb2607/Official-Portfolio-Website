@@ -113,16 +113,16 @@ export default function NavBar() {
         horizontal="space-around"
         vertical="center"
         padding="xs"
-        paddingTop="s"
         background="surface"
-        gap="m"
+        gap="s"
         style={{
           position: "fixed",
           bottom: 0,
           left: 0,
           width: "100%",
           zIndex: 50,
-          paddingBottom: 25,
+          paddingTop: 12,
+          paddingBottom: "calc(env(safe-area-inset-bottom) + 16px)",
         }}
       >
         <IconButton icon="home" variant={pathname === "/" ? "primary" : "ghost"} href="/" />

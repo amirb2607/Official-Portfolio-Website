@@ -1,24 +1,18 @@
 "use client";
-import { Row, Text, IconButton, Column } from "@/once-ui/components";
+import { Column, Row, Text, IconButton } from "@/once-ui/components";
 import { social } from "../resources/once-ui.config";
 import styles from "../styles/Footer.module.scss";
-
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <Column paddingTop="xl">
-      <Row
-        as="footer"
-        position="fixed"
-        background="surface"
-        padding="s"
-        horizontal="space-between"
-        vertical="center"
-        borderTop="neutral-alpha-weak"
-        className={styles.footer}
-
-      >
+    <Column
+      as="footer"
+      background="surface"
+      borderTop="neutral-alpha-weak"
+      className={styles.footer}
+    >
+      <Row padding="s" horizontal="space-between" vertical="center">
         <Text variant="label-default-s" onBackground="neutral-medium">
           © 2025 - {year} Amir Badrudeen - All Rights Reserved.
         </Text>

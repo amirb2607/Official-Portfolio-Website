@@ -1,0 +1,11 @@
+.pageBody {
+  min-height: 100vh;
+  padding-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .pageBody {
+    /* Reserve space for the mobile bottom nav so the footer isn't covered */
+    padding-bottom: 59px;
+  }
+}
