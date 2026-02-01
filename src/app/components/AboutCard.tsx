@@ -1,5 +1,5 @@
 import { Button, Card, Column, Tag, Text, ShineFx, Colors } from "@once-ui-system/core";
-import { Row } from "@/once-ui/components";
+import { Row, SmartLink } from "@/once-ui/components";
 import HoverCardAvatar from "./HoverCardAvatar";
 
 interface AboutCardProps {
@@ -12,6 +12,9 @@ export default function AboutCard({ background = "surface" }: AboutCardProps) {
       <Row gap="l" vertical="center" mobileDirection="column">
         <Column gap="xs" center>
           <HoverCardAvatar />
+          <SmartLink href="https://calendly.com/amirbadrudeen/30min" prefixIcon="calendar">
+            Contact Me
+          </SmartLink>
           <Row gap="xs">
             <Button data-border="rounded" prefixIcon="github" variant="secondary" size="s" href="https://github.com/amirb2607"></Button>
             <Button data-border="rounded" prefixIcon="linkedin" variant="secondary" size="s" href="https://github.com/amirb2607"></Button>

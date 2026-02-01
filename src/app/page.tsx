@@ -13,7 +13,7 @@ import {
 } from "@/once-ui/components";
 import DelayRepeatLetterFX from "./components/DelayRepeatLetterFX";
 import AutoScrollTechStack from "./components/AutoScrollTechStack";
-import { Icon, List, ListItem, ShineFx } from "@once-ui-system/core";
+import { List, ListItem, ShineFx } from "@once-ui-system/core";
 import HoverCardAvatar from "./components/HoverCardAvatar";
 import ResumeButton from "./components/ResumeButton";
 
@@ -59,7 +59,6 @@ export default function Home() {
               <Row center gap="s" wrap paddingTop="s">
                 <Button href="/projects" label="View Projects" size="l" />
                 <ResumeButton/>
-                <Button href="#contact" variant="tertiary" label="Contact" size="l" />
               </Row>
             </Column>
           </RevealFx>
@@ -72,7 +71,7 @@ export default function Home() {
               <Heading variant="display-strong-s">Featured Projects</Heading>
             </Row>
             <Line maxWidth={19} background="info-strong" />
-            <Column gap="m" paddingLeft="xl" paddingRight="xl">
+            <Column gap="m" paddingX="m">
               <Card padding="m" gap="s" maxWidth="s" center href="/projects">
                 <Text variant="heading-strong-s">PortfolioHub</Text>
                 <Text variant="body-default-s" onBackground="neutral-weak">
@@ -101,10 +100,10 @@ export default function Home() {
             </Column>
           </Column>
 
-          <Column id="currently" gap="s" center paddingLeft="xl" paddingRight="xl">
+          <Column id="currently" gap="s" center paddingX="m">
             <Heading variant="display-strong-s">Currently</Heading>
             <Line maxWidth={14} background="info-strong" />
-            <Card padding="s" gap="s" center paddingLeft="xl" paddingRight="xl">
+            <Card padding="s" gap="s" center>
               <Row gap="s" wrap vertical="center" center >
                 <Badge title="Open to work" icon="sparkle" />
               </Row>
@@ -117,7 +116,7 @@ export default function Home() {
           <Column id="contact" gap="s" center>
             <Heading variant="display-strong-s">Contact</Heading>
             <Line maxWidth={14} background="info-strong" />
-            <Row gap="s" wrap center paddingBottom="xl" marginBottom="xl">
+            <Row gap="s" wrap center >
               <SmartLink href="mailto:contact@amirb.dev" prefixIcon="mail">
                 contact@amirb.dev
               </SmartLink>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Column, Input, Row, Dialog} from "@once-ui-system/core";
+import { Button, Dialog, Column, Row } from "@/once-ui/components"
 import { useState } from "react";
 
 export default function ResumeButton() {
@@ -8,7 +8,9 @@ export default function ResumeButton() {
 
   return (
     <>
-      <Button variant="primary" label="Download Resume" size="l" weight="default" onClick={() => setIsOpen(true)}/>
+      <Button variant="primary" type="button" size="l" weight="strong" onClick={() => setIsOpen(true)}>
+        Resume
+      </Button>
       <Dialog
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
@@ -17,8 +19,8 @@ export default function ResumeButton() {
       >
         <Column fillWidth gap="16" marginTop="12">
           <Row fillWidth vertical="center" gap="xl" center>
-            <Button label="Software Engineering" weight="strong" href="/downloads/SE_Resume.pdf" download={true}/>
-            <Button label="IT Support" weight="strong" href="/downloads/IT_Resume.pdf" download={true}/>
+            <Button type="button" label="Software Engineering" weight="strong" href="/downloads/SE_Resume.pdf" download={true}/>
+            <Button type="button" label="IT Support" weight="strong" href="/downloads/IT_Resume.pdf" download={true}/>
           </Row>
         </Column>
       </Dialog>
