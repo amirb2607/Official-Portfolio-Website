@@ -17,7 +17,7 @@ export default function AboutCard({ background = "surface" }: AboutCardProps) {
           </SmartLink>
           <Row gap="xs">
             <Button data-border="rounded" prefixIcon="github" variant="secondary" size="s" href="https://github.com/amirb2607"></Button>
-            <Button data-border="rounded" prefixIcon="linkedin" variant="secondary" size="s" href="https://github.com/amirb2607"></Button>
+            <Button data-border="rounded" prefixIcon="linkedin" variant="secondary" size="s" href="https://linkedin.com/in/amir-bad"></Button>
             <Button data-border="rounded" prefixIcon="mail" variant="secondary" size="s" href="mailto:contact@amirb.dev"></Button>
           </Row>
           <Tag size="l" variant="info" prefixIcon="globe" label="New York City" />
