@@ -1,3 +1,6 @@
+import "@/once-ui/styles/index.scss";
+import "@/once-ui/tokens/index.scss"; //Don't remove this, it ensures tokens are included in the build
+
 import classNames from "classnames";
 
 import { baseURL, style, meta, font, effects } from "@/app/resources/once-ui.config";
@@ -78,11 +81,6 @@ export default function RootLayout({
               })();
             `,
           }}
-        />
-        <script
-          defer
-          src="https://analytics.amirb.dev/script.js"
-          data-website-id="273d388e-c3cf-4e2f-a8a2-44c575df93ff"
         />
       </head>
       <LayoutProvider>
