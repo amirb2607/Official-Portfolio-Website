@@ -31,13 +31,13 @@ export default function AboutCard({ background = "surface" }: AboutCardProps) {
           </Row>
           
           <ShineFx baseOpacity={0.5} variant="body-default-m" onBackground="brand-strong" wrap="balance" align="center" speed={10} >
-            Passionate about crafting seamless UI/UX experiences and building efficient software solutions, I take pride in creating technology that’s both intuitive and accessible. With a strong foundation 
+            Passionate about crafting seamless UI/UX experiences and building efficient software solutions, I take pride in creating technology that's both intuitive and accessible. With a strong foundation 
             in Software Development and IT, I focus on designing reliable systems and interfaces that elevate user interaction while maintaining technical excellence.
           </ShineFx>
 
           <ShineFx baseOpacity={0.5} variant="body-default-m" onBackground="brand-strong" wrap="balance" align="center" speed={8} >
-            I’m constantly exploring new self-hosted and homelab solutions, fine-tuning infrastructure for performance and reliability, and keeping up with emerging trends in business 
-            and investing. When I’m not working on code or infrastructure, you’ll usually find me gaming or experimenting with new tech ideas.
+            I'm constantly exploring new self-hosted and homelab solutions, fine-tuning infrastructure for performance and reliability, and keeping up with emerging trends in business 
+            and investing. When I'm not working on code or infrastructure, you'll usually find me gaming or experimenting with new tech ideas.
           </ShineFx>
         </Column>
       </Row>
