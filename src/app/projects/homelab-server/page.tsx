@@ -9,8 +9,8 @@ import {
   SmartLink,
   Button,
 } from "@/once-ui/components";
-import { Meta } from "@/once-ui/modules";
-import { Carousel, List, ListItem } from "@once-ui-system/core";
+import { HeadingNav, Meta } from "@/once-ui/modules";
+import { Carousel, List, ListItem, RevealFx } from "@once-ui-system/core";
 import { baseURL } from "../../resources/once-ui.config";
 
 const items = [
@@ -188,216 +188,298 @@ export default function HomelabServerProject() {
   return (
     <Column fillWidth fillHeight center padding="xs">
       <Column fillWidth maxWidth="l" gap="l" padding="l">
-        <Column gap="xs" center>
-          <Heading variant="display-strong-s">Homelab Infrastructure</Heading>
-          <Text align="center" onBackground="neutral-weak" variant="body-default-m">
-            A three-node self-hosting setup built from retired gaming PC parts, an always-on M1
-            Mac mini edge node, and a VPS that handles remote access and public-facing workloads.
-          </Text>
-          <Row gap="s" wrap center>
-            <SmartLink href="/projects" prefixIcon="chevronLeft">
-              Back to projects
-            </SmartLink>
-          </Row>
-          <Line maxWidth={16} background="info-strong" />
-        </Column>
+          <RevealFx speed="fast" translateY={5} center>
+            <Column gap="xs" center>
+              <Heading as="h1" variant="display-strong-s">
+                Homelab Infrastructure
+              </Heading>
+              <Text align="center" onBackground="neutral-weak" variant="body-default-m">
+                A three-node self-hosting setup built from retired gaming PC parts, an always-on M1
+                Mac mini edge node, and a VPS that handles remote access and public-facing workloads.
+              </Text>
+              <Row gap="s" wrap center>
+                <SmartLink href="/projects" prefixIcon="chevronLeft">
+                  Back to projects
+                </SmartLink>
+              </Row>
+              <Line maxWidth={16} background="info-strong" />
+            </Column>
+          </RevealFx>
 
-        <Row gap="m" wrap mobileDirection="column" vertical="start">
-          <Column flex={1} minWidth={0}>
-            <Card direction="column" padding="m" gap="m" fillWidth>
-              <Column gap="m">
-                <Carousel
-                  items={items}
-                  controls={false}
-                  indicator="line"
-                  aspectRatio="4 / 3"
-                  play={{ auto: true, interval: 5000, controls: true, progress: true }}
-                />
-                <Column gap="xs">
-                  <Text variant="heading-strong-s">Project Summary</Text>
+          <Row gap="m" wrap mobileDirection="column" vertical="start">
+            <Column flex={1} minWidth={0}>
+              <RevealFx speed="fast" delay={0.2} translateY={-2}>
+                <Card direction="column" padding="m" gap="m" fillWidth>
+                  <Column gap="m">
+                    <Carousel
+                      items={items}
+                      priority
+                      controls={false}
+                      indicator="line"
+                      aspectRatio="4 / 3"
+                      play={{ auto: true, interval: 5000, controls: false, progress: true }}
+                    />
+                    <Column gap="xs">
+                      <Text variant="heading-strong-s">Project Summary</Text>
+                      <Text variant="body-default-m" onBackground="neutral-weak">
+                        I built this to avoid wasting old hardware and to make practical use of parts I
+                        already owned. What started as a repurposed gaming PC quickly became a serious
+                        self-hosting environment for private media, family services, monitoring,
+                        backups, remote access, and public web hosting. It is also the project that has
+                        pushed my infrastructure ownership, networking knowledge, and self-hosting depth
+                        the furthest.
+                      </Text>
+                    </Column>
+                    <Row gap="xs" wrap>
+                      {stackTags.map((tag) => (
+                        <Tag key={tag}>{tag}</Tag>
+                      ))}
+                    </Row>
+                  </Column>
+                </Card>
+              </RevealFx>
+            </Column>
+
+            <Column flex={1} minWidth={0} gap="m">
+              <RevealFx speed="fast" delay={0.3} translateY={3}>
+                <Card direction="column" padding="m" gap="s">
+                  <Text variant="heading-strong-s">Build Story</Text>
                   <Text variant="body-default-m" onBackground="neutral-weak">
-                    I built this to avoid wasting old hardware and to make practical use of parts I
-                    already owned. What started as a repurposed gaming PC quickly became a serious
-                    self-hosting environment for private media, family services, monitoring,
-                    backups, remote access, and public web hosting. It is also the project that has
-                    pushed my infrastructure ownership, networking knowledge, and self-hosting depth
-                    the furthest.
+                    The system began with a reused Fractal Design case, existing Ryzen-era gaming
+                    hardware, and a goal of turning idle parts into something dependable. The biggest
+                    early pain point was memory: the original configuration ran out of headroom quickly
+                    under container load, so I upgraded to 32 GB within the first month to support a
+                    broader daily-use stack.
                   </Text>
-                </Column>
-                <Row gap="xs" wrap>
-                  {stackTags.map((tag) => (
-                    <Tag key={tag}>{tag}</Tag>
+                </Card>
+              </RevealFx>
+
+              <RevealFx speed="fast" delay={0.4} translateY={-3}>
+                <Card direction="column" padding="m" gap="s">
+                  <Text variant="heading-strong-s">Operational Scope</Text>
+                  <Text variant="body-default-m" onBackground="neutral-weak">
+                    Across the three-node setup, the environment supports over 40 services and active
+                    use across roughly 10 users and 30 to 35 devices. The primary homelab server stores
+                    about 5.8 TB of data, most of it media, while the VPS and Mac mini carry much
+                    smaller operational footprints.
+                  </Text>
+                </Card>
+              </RevealFx>
+
+              <RevealFx speed="fast" delay={0.5} translateY={5}>
+                <Button href="/projects" variant="tertiary" label="View all projects" size="m" />
+              </RevealFx>
+            </Column>
+          </Row>
+
+          <RevealFx speed="fast" delay={0.6} translateY={6}>
+            <Column gap="s">
+              <Heading as="h2" id="at-a-glance" variant="heading-strong-m">
+                At a Glance
+              </Heading>
+              <Row gap="m" wrap mobileDirection="column">
+                {quickFacts.map((fact) => (
+                  <Card direction="column" key={fact.title} padding="m" gap="xs" flex={1} minWidth={0}>
+                    <Text variant="heading-strong-s">{fact.title}</Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {fact.body}
+                    </Text>
+                  </Card>
+                ))}
+              </Row>
+            </Column>
+          </RevealFx>
+
+          <Column gap="s">
+            <Heading as="h2" id="platform-and-storage" variant="heading-strong-m">
+              Platform And Storage
+            </Heading>
+            <Card direction="column" padding="m" gap="m" fillWidth align="left">
+              <Text variant="body-default-m" onBackground="neutral-weak">
+                The environment is intentionally split across three nodes. The main Ubuntu host does
+                the heavy lifting, the Mac mini stays online for low-power edge services, and the VPS
+                handles the external access layer plus public web workloads.
+              </Text>
+              <List as="ul" textVariant="body-default-m" gap="4" align="left">
+                {buildDetails.map((item) => (
+                  <ListItem key={item}>{item}</ListItem>
+                ))}
+              </List>
+              <Heading as="h3" id="storage-design" variant="heading-strong-s">
+                Storage Design
+              </Heading>
+              <List as="ul" textVariant="body-default-m" gap="4" align="left">
+                {storageDetails.map((item) => (
+                  <ListItem key={item}>{item}</ListItem>
+                ))}
+              </List>
+            </Card>
+          </Column>
+
+          <Column gap="s">
+            <Heading as="h2" id="access-and-architecture" variant="heading-strong-m">
+              Access And Architecture
+            </Heading>
+            <Card direction="column" padding="m" gap="m" fillWidth align="left">
+              <Text variant="body-default-m" onBackground="neutral-weak">
+                The access model is designed around keeping the home network closed while still making
+                selected services reachable remotely. It is a practical balance between convenience,
+                privacy, and minimizing exposure.
+              </Text>
+              <List as="ul" textVariant="body-default-m" gap="4" align="left">
+                {architecturePoints.map((item) => (
+                  <ListItem key={item}>{item}</ListItem>
+                ))}
+              </List>
+            </Card>
+          </Column>
+
+          <Column gap="s">
+            <Heading as="h2" id="operations-and-reliability" variant="heading-strong-m">
+              Operations And Reliability
+            </Heading>
+            <Column gap="m">
+              <Card direction="column" padding="m" gap="m" fillWidth align="left">
+                <Heading
+                  as="h3"
+                  id="monitoring-backups-and-power-protection"
+                  variant="heading-strong-s"
+                >
+                  Monitoring, Backups, And Power Protection
+                </Heading>
+                <List as="ul" textVariant="body-default-m" gap="4" align="left">
+                  {reliabilityDetails.map((item) => (
+                    <ListItem key={item}>{item}</ListItem>
                   ))}
-                </Row>
-              </Column>
-            </Card>
-          </Column>
-
-          <Column flex={1} minWidth={0} gap="m">
-            <Card direction="column" padding="m" gap="s">
-              <Text variant="heading-strong-s">Build Story</Text>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                The system began with a reused Fractal Design case, existing Ryzen-era gaming
-                hardware, and a goal of turning idle parts into something dependable. The biggest
-                early pain point was memory: the original configuration ran out of headroom quickly
-                under container load, so I upgraded to 32 GB within the first month to support a
-                broader daily-use stack.
-              </Text>
-            </Card>
-
-            <Card direction="column" padding="m" gap="s">
-              <Text variant="heading-strong-s">Operational Scope</Text>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                Across the three-node setup, the environment supports over 40 services and active
-                use across roughly 10 users and 30 to 35 devices. The primary homelab server stores
-                about 5.8 TB of data, most of it media, while the VPS and Mac mini carry much
-                smaller operational footprints.
-              </Text>
-            </Card>
-
-            <Button href="/projects" variant="tertiary" label="View all projects" size="m" />
-          </Column>
-        </Row>
-
-        <Column gap="s">
-          <Heading variant="heading-strong-m">At a Glance</Heading>
-          <Row gap="m" wrap mobileDirection="column">
-            {quickFacts.map((fact) => (
-              <Card direction="column" key={fact.title} padding="m" gap="xs" flex={1} minWidth={0}>
-                <Text variant="heading-strong-s">{fact.title}</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak">
-                  {fact.body}
-                </Text>
+                </List>
               </Card>
-            ))}
-          </Row>
-        </Column>
 
-        <Column gap="s">
-          <Heading variant="heading-strong-m">Platform And Storage</Heading>
-          <Card direction="column" padding="m" gap="m" fillWidth align="left">
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              The environment is intentionally split across three nodes. The main Ubuntu host does
-              the heavy lifting, the Mac mini stays online for low-power edge services, and the VPS
-              handles the external access layer plus public web workloads.
+              <Card direction="column" padding="m" gap="m" fillWidth align="left">
+                <Heading
+                  as="h3"
+                  id="security-and-maintenance-approach"
+                  variant="heading-strong-s"
+                >
+                  Security And Maintenance Approach
+                </Heading>
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  Monthly maintenance works well for the overall environment, while shared services
+                  get more careful handling. The goal is not zero change. It is predictable change
+                  with backup coverage and low user impact.
+                </Text>
+                <List as="ul" textVariant="body-default-m" gap="4" align="left">
+                  {securityDetails.map((item) => (
+                    <ListItem key={item}>{item}</ListItem>
+                  ))}
+                </List>
+              </Card>
+            </Column>
+          </Column>
+
+          <Column gap="s">
+            <Heading as="h2" id="standout-tools" variant="heading-strong-m">
+              Standout Tools
+            </Heading>
+            <Row gap="m" wrap mobileDirection="column">
+              {standoutTools.map((tool) => (
+                <Card direction="column" key={tool.title} padding="m" gap="s" flex={1} minWidth={0}>
+                  <Text variant="heading-strong-s">{tool.title}</Text>
+                  <Text variant="body-default-m" onBackground="neutral-weak">
+                    {tool.body}
+                  </Text>
+                </Card>
+              ))}
+            </Row>
+          </Column>
+
+          <Column gap="s">
+            <Heading as="h2" id="everyday-services" variant="heading-strong-m">
+              Everyday Services
+            </Heading>
+            <Row gap="m" wrap mobileDirection="column">
+              {serviceCards.map((service) => (
+                <Card direction="column" key={service.title} padding="m" gap="s" flex={1} minWidth={0}>
+                  <Text variant="heading-strong-s">{service.title}</Text>
+                  <Text variant="body-default-m" onBackground="neutral-weak">
+                    {service.body}
+                  </Text>
+                </Card>
+              ))}
+            </Row>
+          </Column>
+
+          <Column gap="s">
+            <Heading as="h2" id="outcomes-and-lessons" variant="heading-strong-m">
+              Outcomes And Lessons
+            </Heading>
+            <Column gap="m">
+              <Card direction="column" padding="m" gap="m" fillWidth align="left">
+                <Heading as="h3" id="what-this-improved" variant="heading-strong-s">
+                  What This Improved
+                </Heading>
+                <List as="ul" textVariant="body-default-m" gap="4" align="left">
+                  {outcomes.map((item) => (
+                    <ListItem key={item}>{item}</ListItem>
+                  ))}
+                </List>
+              </Card>
+
+              <Card direction="column" padding="m" gap="m" fillWidth align="left">
+                <Heading as="h3" id="key-lessons" variant="heading-strong-s">
+                  Key Lessons
+                </Heading>
+                <List as="ul" textVariant="body-default-m" gap="4" align="left">
+                  {lessons.map((item) => (
+                    <ListItem key={item}>{item}</ListItem>
+                  ))}
+                </List>
+              </Card>
+
+              <Card direction="column" padding="m" gap="m" fillWidth align="left">
+                <Heading as="h3" id="next-iteration" variant="heading-strong-s">
+                  Next Iteration
+                </Heading>
+                <List as="ul" textVariant="body-default-m" gap="4" align="left">
+                  {nextSteps.map((item) => (
+                    <ListItem key={item}>{item}</ListItem>
+                  ))}
+                </List>
+              </Card>
+            </Column>
+          </Column>
+
+      </Column>
+
+      <Column
+        as="aside"
+        width={12}
+        minWidth={12}
+        position="fixed"
+        hide="m"
+        style={{
+          right: "var(--responsive-space-m)",
+          top: "50vh",
+          transform: "translateY(-50%)",
+          zIndex: 1,
+        }}
+      >
+        <RevealFx speed="fast" delay={1} translateY={8}>
+          <Card
+            direction="column"
+            padding="m"
+            gap="s"
+            fillWidth
+            style={{
+              maxHeight: "calc(100vh - var(--static-space-64))",
+              overflowY: "auto",
+            }}
+          >
+            <Text variant="label-default-s" onBackground="neutral-weak">
+              Homelab Infrastructure
             </Text>
-            <List as="ul" textVariant="body-default-m" gap="4" align="left">
-              {buildDetails.map((item) => (
-                <ListItem key={item}>{item}</ListItem>
-              ))}
-            </List>
-            <Text variant="heading-strong-s">Storage Design</Text>
-            <List as="ul" textVariant="body-default-m" gap="4" align="left">
-              {storageDetails.map((item) => (
-                <ListItem key={item}>{item}</ListItem>
-              ))}
-            </List>
+            <HeadingNav fillWidth />
           </Card>
-        </Column>
-
-        <Column gap="s">
-          <Heading variant="heading-strong-m">Access And Architecture</Heading>
-          <Card direction="column" padding="m" gap="m" fillWidth align="left">
-            <Text variant="body-default-m" onBackground="neutral-weak">
-              The access model is designed around keeping the home network closed while still making
-              selected services reachable remotely. It is a practical balance between convenience,
-              privacy, and minimizing exposure.
-            </Text>
-            <List as="ul" textVariant="body-default-m" gap="4" align="left">
-              {architecturePoints.map((item) => (
-                <ListItem key={item}>{item}</ListItem>
-              ))}
-            </List>
-          </Card>
-        </Column>
-
-        <Column gap="s">
-          <Heading variant="heading-strong-m">Operations And Reliability</Heading>
-          <Column gap="m">
-            <Card direction="column" padding="m" gap="m" fillWidth align="left">
-              <Text variant="heading-strong-s">Monitoring, Backups, And Power Protection</Text>
-              <List as="ul" textVariant="body-default-m" gap="4" align="left">
-                {reliabilityDetails.map((item) => (
-                  <ListItem key={item}>{item}</ListItem>
-                ))}
-              </List>
-            </Card>
-
-            <Card direction="column" padding="m" gap="m" fillWidth align="left">
-              <Text variant="heading-strong-s">Security And Maintenance Approach</Text>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                Monthly maintenance works well for the overall environment, while shared services
-                get more careful handling. The goal is not zero change. It is predictable change
-                with backup coverage and low user impact.
-              </Text>
-              <List as="ul" textVariant="body-default-m" gap="4" align="left">
-                {securityDetails.map((item) => (
-                  <ListItem key={item}>{item}</ListItem>
-                ))}
-              </List>
-            </Card>
-          </Column>
-        </Column>
-
-        <Column gap="s">
-          <Heading variant="heading-strong-m">Standout Tools</Heading>
-          <Row gap="m" wrap mobileDirection="column">
-            {standoutTools.map((tool) => (
-              <Card direction="column" key={tool.title} padding="m" gap="s" flex={1} minWidth={0}>
-                <Text variant="heading-strong-s">{tool.title}</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak">
-                  {tool.body}
-                </Text>
-              </Card>
-            ))}
-          </Row>
-        </Column>
-
-        <Column gap="s">
-          <Heading variant="heading-strong-m">Everyday Services</Heading>
-          <Row gap="m" wrap mobileDirection="column">
-            {serviceCards.map((service) => (
-              <Card direction="column" key={service.title} padding="m" gap="s" flex={1} minWidth={0}>
-                <Text variant="heading-strong-s">{service.title}</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak">
-                  {service.body}
-                </Text>
-              </Card>
-            ))}
-          </Row>
-        </Column>
-
-        <Column gap="s">
-          <Heading variant="heading-strong-m">Outcomes And Lessons</Heading>
-          <Column gap="m">
-            <Card direction="column" padding="m" gap="m" fillWidth align="left">
-              <Text variant="heading-strong-s">What This Improved</Text>
-              <List as="ul" textVariant="body-default-m" gap="4" align="left">
-                {outcomes.map((item) => (
-                  <ListItem key={item}>{item}</ListItem>
-                ))}
-              </List>
-            </Card>
-
-            <Card direction="column" padding="m" gap="m" fillWidth align="left">
-              <Text variant="heading-strong-s">Key Lessons</Text>
-              <List as="ul" textVariant="body-default-m" gap="4" align="left">
-                {lessons.map((item) => (
-                  <ListItem key={item}>{item}</ListItem>
-                ))}
-              </List>
-            </Card>
-
-            <Card direction="column" padding="m" gap="m" fillWidth align="left">
-              <Text variant="heading-strong-s">Next Iteration</Text>
-              <List as="ul" textVariant="body-default-m" gap="4" align="left">
-                {nextSteps.map((item) => (
-                  <ListItem key={item}>{item}</ListItem>
-                ))}
-              </List>
-            </Card>
-          </Column>
-        </Column>
+        </RevealFx>
       </Column>
     </Column>
   );

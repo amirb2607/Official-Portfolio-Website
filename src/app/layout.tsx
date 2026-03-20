@@ -39,6 +39,7 @@ export default function RootLayout({
       suppressHydrationWarning
       as="html"
       lang="en"
+      data-scroll-behavior="smooth"
       style={{ minHeight: '100vh' }}
       background="page"
       data-neutral={style.neutral}

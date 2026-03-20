@@ -29,7 +29,7 @@ export default function Home() {
     <RevealFx speed="fast" translateY={5}>
       <Column fillWidth fillHeight center padding="xs">
         <Column center maxWidth="m" gap="m" marginTop="xs">
-          <Badge id="new" title="Now Hosted On My Homelab Server!" icon="computer" />
+          <Badge id="new" title="Now Hosted On My Homelab Infrastructure!" icon="computer" href="/projects/homelab-server" />
           <DelayRepeatLetterFX
             text="Hello World!"
             delay={10_000}
