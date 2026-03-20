@@ -82,6 +82,12 @@ const education = [
 
 const projects = [
   {
+    name: "Homelab Infrastructure",
+    outcome: "Three-Node Hybrid Homelab running Ubuntu and an M1 Mac mini, hosting an assortment of services locally with a VPS-backed reverse-proxy tunnel for secure remote access.",
+    stack: ["Docker Compose", "Ubuntu", "macOS", "Pangolin"],
+    link: "/projects/homelab-server",
+  },
+  {
     name: "PortfolioHub Mobile App",
     outcome: "Investment: Built a full-stack portfolio tracker using React Native, Expo & Firebase",
     stack: ["React Native", "TypeScript", "Expo", "Firebase"],
