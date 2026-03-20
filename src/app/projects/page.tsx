@@ -24,7 +24,7 @@ const projects = [
     ],
     items: [
       { slide: "/images/projects/homelab/setup.png", alt: "Main Ubuntu Setup" },
-      { slide: "/images/projects/homelab/setup_2.jpg", alt: "Mac Mini Edge Node and Gaming Setup" },
+      { slide: "/images/projects/homelab/setup_2.JPG", alt: "Mac Mini Edge Node and Gaming Setup" },
     ],
   },
 ];
