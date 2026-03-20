@@ -18,12 +18,14 @@ const ElementType = forwardRef<HTMLElement, ElementTypeProps>(
   ({ href, type, onClick, onLinkClick, children, className, style, ...props }, ref) => {
     if (href) {
       const isExternal = isExternalLink(href);
-      if (isExternal) {
+      const isDownload = Boolean(props.download);
+
+      if (isExternal || isDownload) {
         return (
           <a
             href={href}
-            target="_blank"
-            rel="noreferrer"
+            target={isExternal ? "_blank" : props.target}
+            rel={isExternal ? "noreferrer" : props.rel}
             ref={ref as React.Ref<HTMLAnchorElement>}
             className={className}
             style={style}

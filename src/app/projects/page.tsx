@@ -15,7 +15,7 @@ import DelayRepeatLetterFX from "../components/DelayRepeatLetterFX";
 
 const projects = [
   {
-    slug: "homelab-infra",
+    slug: "homelab-server",
     title: "Homelab Infrastructure",
     description:
       "Hybrid homelab running Ubuntu and an M1 Mac mini, hosting an assortment of services locally with a VPS-backed reverse-proxy tunnel for secure remote access.",
@@ -24,6 +24,7 @@ const projects = [
     ],
     items: [
       { slide: "/images/projects/homelab/setup.png", alt: "Main Ubuntu Setup" },
+      { slide: "/images/projects/homelab/setup_2.jpg", alt: "Mac Mini Edge Node and Gaming Setup" },
     ],
   },
 ];

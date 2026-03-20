@@ -17,6 +17,12 @@ import { List, ListItem, ShineFx } from "@once-ui-system/core";
 import HoverCardAvatar from "./components/HoverCardAvatar";
 import ResumeButton from "./components/ResumeButton";
 
+const proofPoints = [
+  "40+ self-hosted services",
+  "3-node homelab setup",
+  "10 users / 30+ devices",
+  "B.S. Computer Science",
+];
 
 export default function Home() {
   return (
@@ -42,8 +48,8 @@ export default function Home() {
                 speed={5}
                 paddingBottom="xs"
               >
-                I'm Amir an aspiring Junior Software Developer! After hours, I build my own
-                projects.
+                I'm Amir, a junior developer focused on full-stack apps, self-hosted
+                infrastructure, and practical systems that solve real problems.
               </ShineFx>
               <ShineFx
                 baseOpacity={0.75}
@@ -53,8 +59,13 @@ export default function Home() {
                 align="center"
                 speed={5}
               >
-                B.S. in Computer Science @ Brooklyn College
+                B.S. in Computer Science @ Brooklyn College, building projects I use every day.
               </ShineFx>
+              <Row gap="xs" wrap center paddingTop="xs">
+                {proofPoints.map((point) => (
+                  <Tag key={point}>{point}</Tag>
+                ))}
+              </Row>
               <AutoScrollTechStack />
               <Row center gap="s" wrap paddingTop="s">
                 <Button href="/projects" label="View Projects" size="l" />
@@ -71,18 +82,48 @@ export default function Home() {
               <Heading variant="display-strong-s">Featured Projects</Heading>
             </Row>
             <Line maxWidth={19} background="info-strong" />
-            <Column gap="m" paddingX="m">
-              <Card padding="m" gap="s" maxWidth="s" center href="/projects">
-                <Text variant="heading-strong-s">PortfolioHub</Text>
+            <Column gap="m" paddingX="m" fillWidth maxWidth="m">
+              <Card
+                direction="column"
+                padding="m"
+                gap="s"
+                fillWidth
+                center
+              >
+                <Text variant="heading-strong-s">Homelab Infrastructure</Text>
                 <Text variant="body-default-s" onBackground="neutral-weak">
-                  Investment: Built a full-stack portfolio tracker using React Native, Expo & Firebase
+                  A three-node self-hosting setup built from retired gaming PC parts, an always-on
+                  Mac mini edge node, and a VPS for remote access, monitoring, backups, and
+                  everyday infrastructure.
                 </Text>
                 <Row gap="xs" wrap center>
-                  <Tag>React Native</Tag>
-                  <Tag>Expo</Tag>
-                  <Tag>Firebase</Tag>
+                  <Tag>Docker Compose</Tag>
+                  <Tag>Ubuntu</Tag>
+                  <Tag>Mac Mini M1</Tag>
+                  <Tag>VPS</Tag>
+                  <Tag>Self-Hosted</Tag>
                 </Row>
-                <Button href="/projects" variant="tertiary" prefixIcon="chevronRight"/>
+                <Button
+                  href="/projects/homelab-server"
+                  variant="tertiary"
+                  prefixIcon="chevronRight"
+                  label="View project"
+                />
+              </Card>
+
+              <Card direction="column" padding="m" gap="s" fillWidth center>
+                <Text variant="heading-strong-s">What I'm Building Right Now</Text>
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  I'm continuing to expand the homelab, improve backup and network reliability,
+                  and use the stack to host and iterate on this portfolio with a more self-hosted,
+                  infrastructure-first workflow.
+                </Text>
+                <Row gap="xs" wrap center>
+                  <Tag>Homelab Iteration</Tag>
+                  <Tag>Backup Testing</Tag>
+                  <Tag>Networking</Tag>
+                  <Tag>Portfolio Platform</Tag>
+                </Row>
               </Card>
             </Column>
           </Column>

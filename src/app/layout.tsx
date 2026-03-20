@@ -9,7 +9,6 @@ import { Background, Column, Flex, ThemeProvider } from "@/once-ui/components";
 import { opacity, SpacingToken } from "@/once-ui/types";
 import { Meta, Schema } from "@/once-ui/modules";
 
-import UnderDevBanner from "./components/UnderDevBanner";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { schema } from "@/app/resources/once-ui.config";
@@ -136,7 +135,6 @@ export default function RootLayout({
                       color: effects.lines.color,
                     }}
                   />
-                  <UnderDevBanner />
                   <NavBar />
                   {children}
                   <Footer />
